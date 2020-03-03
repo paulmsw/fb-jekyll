@@ -1,0 +1,20 @@
+<nav class="z-depth-1 parallax-container" style=" height: 56px; position: relative;  opacity: 0.8; filter: alpha(opacity=80);">
+    <div class="nav-wrapper parallax">
+      <div  class="parallax z-depth-2"><img style="width: 400%;" src="{{ site.baseurl }}/assets/images/heros/goa_sunset_dim.jpg">
+      </div>
+      <div class="cover-panel z-depth-3">
+          </div>
+
+      <div class="col s9 container">
+           {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+           <a id="crumb" class="breadcrumb" href="/"><i class="material-icons white-text md-18">home</i></a>
+          {% for crumb in crumbs offset: 1 %}
+            {% if forloop.last %}
+            <span id="crumb" class="write-text breadcrumb">{{ crumb | replace:'-',' ' | replace:'_',' ' | remove:'.html' | capitalize }}</span>
+            {% else %}
+             <a id="crumb" class="breadcrumb yellow-text" href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}"><span id="crumb">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a></span>
+            {% endif %}
+          {% endfor %}
+    </div>
+  </div>
+</nav>

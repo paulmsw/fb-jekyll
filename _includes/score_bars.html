@@ -1,0 +1,101 @@
+
+       <!-- start score bars -->
+
+        <section class="grey lighten-2">
+           <div class="center-align">
+                <!-- games chips -->
+              <div class="row container"> <!--container -->
+                    <div class="card all_radius" style="margin: 20px;">
+
+
+                       <div class="container">
+
+                         <div class="row grey-text">
+                            <h6 class="col s9 m9 l9 left-align black-text">Choice of Games</h6>
+                            <h6 class="col s2 m2 l2 right-align black-text"> {{ page.scores_games }}% </h6>
+                          </div>
+
+                       <div class="progress" style="margin: 0px !important;">
+                             <div class="determinate green" style="width: {{ page.scores_games }}%; "></div>
+                         </div>
+
+                        <div>
+                          <ul class="collection hide-on-small-only" style="bottom: 5px;">
+                              {% for game in page.game_options %}
+                              <li  class="collection-item chip grey lighten-2 white-text"> {{ game }} </li>
+                              {% endfor %}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+           <!-- games chips -->
+
+                    <div class="card all_radius" style="margin: 20px;">
+                       <div class="container">
+                         <div class="row grey-text">
+                            <h6 class="col s9 m9 l9 left-align black-text">Ways to Deposit</h6>
+                            <h6 class="col s2 m2 l2 right-align black-text">100%</h6>
+                          </div>
+                      <div class="progress" style="margin: 0px !important;">
+                             <div class="determinate green" style="width: 90%; margin: 0 !important;"></div>
+                         </div>
+                    <div>
+                      <ul class="collection hide-on-small-only" style="bottom: 5px;">
+                          {% for game in page.game_options %}
+                           <li class="collection-item chip grey lighten-2 white-text"> {{ game }} </li>
+                          {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+              </div>
+
+
+             <!-- games chips -->
+
+                    <div class="card all_radius" style="margin: 20px;">
+                       <div class="container">
+                         <div class="row grey-text">
+                            <h6 class="col s9 m9 l9 left-align black-text">Deposit Options</h6>
+                            <h6 class="col s2 m2 l2 right-align black-text">100%</h6>
+                          </div>
+                          <div class="progress" style="margin: 0px !important;">
+                             <div class="determinate green" style="width: 90%; margin: 0 !important;"></div>
+                         </div>
+                       <div>
+                      <ul class="collection hide-on-small-only" style="bottom: 5px;">
+                          {% for game in page.game_options %}
+                           <li class="collection-item chip grey lighten-2 white-text"> {{ game }} </li>
+                          {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+              </div>
+
+
+          <!-- games chips -->
+
+                     <div class="card all_radius" style="margin: 20px;">
+                       <div class="container">
+                        <div class="row grey-text">
+                            <h6 class="col s9 m9 l9 left-align black-text">Casino Software</h6>
+                            <h6 class="col s2 m2 l2 right-align black-text">100%</h6>
+                          </div>
+                           <div class="progress" style="margin: 0px !important;">
+                          <div class="determinate green" style="width: 90%; margin: 0 !important;"></div>
+                           </div>
+                         <div>
+                          <ul class="collection hide-on-small-only" style="bottom: 5px; 0 !important;">
+
+
+                            {% for software in page.games_by %}
+                             <li class="collection-item chip grey lighten-2 white-text"> {{ software }} </li>
+                          {% endfor %}
+                      </ul>
+                   </div>
+                  </div>
+                 </div>
+               </div>
+              </div>
+           <!-- end score bars -->
+

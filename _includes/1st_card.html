@@ -1,0 +1,176 @@
+
+   <!-- large starts-->
+    <div class="valign-wrapper">
+    <div class="cardwin" style="width: 100%; margin: 0px 10px 10px 10px;">
+    
+     <div class="card-panel center-align hide-on-med-and-down all_radius">
+     
+      <div class="row hide-on-med-and-down all_radius">
+
+          <div class="col s3 m3 hide-on-med-and-down" style="text-align: left;">
+          <div style="position: relative; font-size: 1.5em;"> 
+            <div class="firstPlaces animated rubberBand delay-4s chip pink white-text z-depth-0"  style="text-align: left; position:relative; padding: 10px; left: -17px ; top: -17px">
+               <em><span style="position:relative; top: -3px; left: -2px">1<span class="supertext">st</span></span></em>
+            </div>
+          </div>
+          
+          <div>
+          {% if page.invert == "true"  %}
+           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="{{ page.color }} circle responsive-img casino-logo" style="margin-bottom: 0px; min-width: 100px; max-width: 140px;"></img>
+           {% endif %}
+          
+          {% if page.invert != "true" %}
+           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="circle responsive-img casino-logo" style="margin-bottom: 0px;  min-width: 100px; max-width: 140px;"></img>
+           {% endif %} 
+          </div>
+       </div>
+       
+       <div class="col s4 m4 l4 hide-on-med-and-down" >
+         <div class="container" style="bottom: -10px; display: block;">
+       
+     <div class="rating-holder">
+                <div class="c-rating c-rating--big" data-rating-value="{{page.stars}}">
+                  <button>1</button>
+                  <button>2</button>
+                  <button>3</button>
+                  <button>4</button>
+                  <button>5</button>
+                </div>
+        </div>
+       
+           <h5 class="{{page.textcolor}}" style="padding: 6px; text-transform: uppercase; font-size: .8em;">{{ page.casino_name }}</h5>
+           <div class="promo-level-1">{{ page.primary_bonus }}</div>
+           <div class="promo-level-2">{{ page.secondary_bonus }}</div>
+         </div>
+        <div class="center hide-on-med-and-down">
+        {% if page.show_review == "true" %}  
+       <a href="{{page.url}}" class="center grey-text lighten-2" style="position:relative; left: 0px; top: 25px; font-size: 12px;"><i class="fas fa-arrow-down"></i>read review</a>
+     
+         {% endif %}
+        
+        </div>
+       </div>
+        
+        <div class="col s5 m5 hide-on-med-and-down right middle" style="padding: 0px; font-size: .9em;">
+              <ul class="collection" >
+               {% for l_item in page.large_sell %}
+               <li class="collection-item"><div>{{ l_item }}<a href="{{page.url}}" class="secondary-content"></a></div></li>
+               {% endfor %}
+              </ul>
+              <a href="#" class="animated rubberBand delay-5s waves-effect waves-light btn white-text right z-depth-2" style="position:relative; top: 22px; left: -20px;">
+              <i class="material-icons right">send</i>Play Now</a>
+          </div> 
+        </div>
+      </div>
+    </div>
+ </div>
+<!-- medium starts-->
+<div class="container all_radius" style="max-width: 100%;">
+ <div class="card-panel all_radius show-on-medium"  style="display:none;">
+    
+    
+      <div class="row">
+          <div class="col s3 m3" style="text-align: left;">
+          <div>
+            <div class="firstPlaces animated rubberBand delay-4s chip pink white-text z-depth-1"  style="text-align: left; position:relative; left: -27px ; top: -17px">
+               <em><span style="position:relative; top: -4px; left: -2px">1<span class="supertext">st</span></span></em>
+            </div>
+          </div>
+          
+          <div>
+        {% if page.invert == "true"  %}
+           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="{{ page.color }} circle responsive-img casino-logo" style="margin-bottom 0px; min-width: 100px; max-width: 140px;"></img>
+           {% endif %}
+          
+          {% if page.invert != "true" %}
+           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="circle responsive-img casino-logo" style="margin-bottom: 0px;  min-width: 100px; max-width: 140px;"></img>
+           {% endif %} 
+          </div>
+         </div>
+       <div class="col s5 m5 center">
+         <div class="container">
+    
+     <div class="rating-holder">
+    <div class="c-rating c-rating--big" data-rating-value="{{page.stars}}">
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+      <button>5</button>
+    </div>
+  </div>
+      <h5 class="{{page.textcolor}}" style="padding: 6px; text-transform: uppercase; font-size: .8em;">{{ page.casino_name }}</h5>
+           <div class="promo-level-1">{{ page.primary_bonus }}</div>
+           <div class="promo-level-2">{{ page.secondary_bonus }}</div>
+    
+            {% if page.show_review == "true" %}  
+             <div class="container center">
+              <a href="#" class="center-align grey-text lighten-2" style="position:relative; left: 0px; top: 25px; font-size: 12px;"><i class="fas fa-arrow-down"></i> read review</a> 
+              
+             </div>
+             <div>
+ 
+             </div>
+            {% endif %}  
+       </div>
+      </div>
+        <div class="col s4 m4 center">
+             <ul class="collection">
+               {% for m_item in page.medium_sell %}
+               <li class="collection-item"><div>{{ m_item }}</div></li>
+               {% endfor %}
+              </ul>
+              <a class="z-depth-0 animated rubberBand delay-5s waves-effect waves-light btn white-text right z-depth-2" style="position:relative; left: -12px; top: 20px;">
+              <i class="material-icons right">send</i>Play Now</a>
+          </div> 
+        </div>
+    </div>
+</div>
+       
+ <!--  small version  -->
+<div style="max-width: 100%;">
+    <div class="show-on-small"  style="display:none;">
+      <div class="col s12 m8 offset-m3 l8 offset-l3">
+        
+        
+        <div class="card-panel all_radius">
+          <div class="row valign-wrapper center">
+            <div class="col s2 m2 center middle">
+            
+          {% if page.invert == "true"  %}
+           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.casino_name }}" class="{{ page.color }} circle responsive-img casino-logo" style="margin-bottom: 0px;"></img>
+           {% endif %}
+            {% if page.invert != "true" %}
+            <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="circle responsive-img casino-logo" style="margin-bottom: 0px;">
+            {% endif %} 
+             
+             <p>
+                <a class="grey-text lighten-2" href="{{ page.url }}" style="position:relative; left: 0px; top: 25px; font-size: 10px;">review</a>
+             
+             </p>
+           </div>
+         
+         <div class="col s8 m8">
+
+ <div class="rating-holder">
+    <div class="c-rating c-rating--medium" data-rating-value="{{page.stars}}">
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+      <button>5</button>
+    </div>
+  </div>
+
+ <h5 class="{{page.textcolor}}" style="padding: 6px; text-transform: uppercase; font-size: .8em;">{{ page.casino_name }}</h5>
+          <!-- bonuses in medium-down -->
+           <div class="promo-level-3">{{page.primary_bonus}}</div> <div class="promo-level-4">{{page.secondary_bonus}}</div>
+            </div>
+            <div class="col s2 m2">
+             <a class="btn-floating  pulse"><i class="material-icons">arrow_right</i></a>
+            </div>
+            </div>
+            </div>
+            </div>
+    </div>
+   </div>

@@ -1,0 +1,107 @@
+
+
+
+
+
+
+.tabs {
+  &.tabs-transparent {
+    background-color:  transparentize(desaturate($secondary-color, 5%), .75);
+
+    .tab a,
+    .tab.disabled a,
+    .tab.disabled a:hover {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .tab a:hover,
+    .tab a.active {
+      color: #fff;
+    }
+
+    .indicator {
+      background-color: #fff;
+    }
+  }
+
+  &.tabs-fixed-width {
+    display: flex;
+
+    .tab {
+      flex-grow: 1;
+    }
+  }
+
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 72px;
+
+  background-color: $tabs-bg-color;
+  margin: 3 auto;
+  white-space: nowrap;
+
+  .tab {
+    display: inline-block;
+    text-align: center;
+    line-height: 72px;
+    height: 72px;
+    padding: 2px;
+    margin: 2px;
+    text-transform: uppercase;
+
+    a {
+      z-index: 0;
+      &:focus,
+      &:focus.active {
+
+        outline: none;
+      }
+
+      &:hover,
+      &.active {
+
+        color: $tabs-text-color;
+      }
+
+      color: rgba($tabs-text-color, .7);
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 0 3px;
+      font-size: 3px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      transition: color .28s ease, background-color .28s ease;
+    }
+
+    &.disabled a,
+    &.disabled a:hover {
+      cursor: default;
+    }
+  }
+  .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    background-color: $tabs-underline-color;
+    will-change: left, right;
+  }
+}
+
+// Fixed Sidenav hide on smaller
+@media #{$medium-and-down} {
+  .tabs {
+    display: flex;
+
+    .tab {
+      flex-grow: 1;
+
+      a {
+        padding: 3 1px;
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,10 @@
+@import "materialize/components/color-variables";
+$primary-color: color("pink", "base") !default;
+$secondary-color: color("yellow", "base") !default;
+@import 'materialize';
+
+@import "@material/animation/variables";
+
+.my-element--animating {
+  animation: foo-keyframe 175ms $mdc-animation-standard-curve-timing-function;
+}

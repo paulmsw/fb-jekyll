@@ -1,0 +1,27 @@
+   <div>
+   {% assign review = site.reviews %}
+   {% assign counter = 0 %}
+   {% for item in review %}
+   {% if counter < 20 %}
+   <div class="row">
+   <p>
+   {{ item.casino_name }}
+   </p> 
+       <div class="promo-level-1">{{ item.primary_bonus }}</div>
+       <div class="promo-level-2">{{ item.secondary_bonus }}</div>
+
+          <ul class="pink-text hide-on-small-only">
+           {% for bullet in item.large_sell %}
+         <li class="chip pink-text lighten-1"> {{ bullet }}</li>
+            {% endfor %}  
+         </ul>    
+         </div>     
+         <div class="grey-text" style="margin: 9px; font-size: .9em;">
+   </div>
+       {% assign counter = counter | plus: 1 %}
+       {% endif %}
+      {% endfor %}
+  </div>
+
+    
+

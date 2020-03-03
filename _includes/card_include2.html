@@ -1,0 +1,54 @@
+<section>
+  
+
+  <div class="center-align">
+
+
+   <div class="col s12 m12 l12" id="columns">
+
+
+    {% for review in paginator.posts %}
+    
+  <figure>
+  <p>
+    <img src="/assets/images/logos/{{ review.logo }}" alt="{{ review.title }}" class=" {% if review.invert %} {{ review.color }} {% endif %} animated tadaHover tada delay-2s responsive-img circle brand-img" style="padding: 10px; position: relative; object-fit: contain; {% if review.logosize %} width: {{ review.logosize }}; {% endif %}">
+    </p> 
+
+        <div class="rating-holder">
+          <div class="c-rating c-rating--big" data-rating-value="{{review.stars}}">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+          </div>
+        </div>
+
+        <h5 class="{{review.textcolor}}" style="padding: 6px; text-transform: uppercase; font-size: .9em;">{{ review.casino_name }}</h5>
+
+
+       <div class="promo-level-1">{{ review.primary_bonus }}</div>
+       <div class="promo-level-2">{{ review.secondary_bonus }}</div>
+        <div class="container">
+          <ul class="pink-text hide-on-small-only">
+           {% for bullet in review.medium_sell %}
+          <li class="chip pink-text lighten-1"> {{ bullet }}</li>
+            {% endfor %}  
+         </ul>    
+         </div>     
+         <div class="card-action" style="padding: 6px;">
+
+         <div class="btn">
+          <a class="white-text" style="position: relative; top: -4px;" href="#">Claim Bonus<i class="material-icons" style="position: relative; left: 15px; ;top: 2px;" >send</i></a>
+         </div>
+            <div class="grey-text" style="margin: 9px; font-size: .9em;">
+           <p>{{ review.terms }}</p>
+         </div> 
+        </div>
+      </figure>
+
+
+      {% endfor %}
+    </div>
+
+ </section>

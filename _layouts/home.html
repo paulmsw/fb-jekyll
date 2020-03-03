@@ -1,0 +1,552 @@
+---
+layout: default
+---
+
+
+
+
+
+
+
+
+
+{{ page.casino_owner }}
+
+{% for brand in page.alt.brand %}
+{% assign filter_path = page.alt.path[forloop.index0] %}
+
+<span class="text_item"><a href="{{ filter_path }}">{{ brand }}</a></span>
+{% endfor %}
+
+
+
+
+<div class="container">
+  <span>
+    <div class="row" style="margin-top: 20px;">
+
+        <div class="col s12 m9 l9" style="margin: 0px; text-align: left;">
+          <div>
+          
+    {% assign mid = site.reviews | sort: 'score' %}
+    {% assign sorted = mid | reverse %}
+
+    {% for review in sorted limit:3 %}
+
+<!--
+  Cards horizontal large medium and small
+-->
+
+<div class="cardwin">   
+     <div class="card-panel hide-on-med-and-down all_radius">
+     
+      <div class="row hide-on-med-and-down all_radius">
+          <div class="col s3 m3 hide-on-med-and-down" style="text-align: left; padding: 0px;">
+          
+          <!-- ranking -->          
+          {% if forloop.first %}
+          <div style="position: relative; font-size: 1.5em;"> 
+            
+            <div class="firstPlaces animated rubberBand delay-4s chip yellow pink-text z-depth-0"  style="text-align: left; position:relative; padding: 10px; left: -17px ; top: -17px">
+              <em><span style="padding: 3px 3px; position:relative; top: -3px; left: -2px">1<span class="supertext">st</span></span></em>
+            </div>
+          </div>
+          
+
+          {% endif %}
+
+          {% if forloop.index == 2 %}
+          <div style="position: relative; font-size: 1.5em;"> 
+            
+            <div class="firstPlaces animated rubberBand delay-4s chip yellow pink-text z-depth-0"  style="text-align: left; position:relative; padding: 10px; left: -17px ; top: -17px">
+              <em><span style="padding: 3px 3px; position:relative; top: -3px; left: -2px">2<span class="supertext">nd</span></span></em>
+            </div>
+          </div>
+          
+          {% endif %}
+
+
+         {% if forloop.index == 3 %}
+          <div style="position: relative; font-size: 1.5em;"> 
+            
+            <div class="firstPlaces animated rubberBand delay-4s chip yellow pink-text z-depth-0"  style="text-align: left; position:relative; padding: 10px; left: -17px ; top: -17px">
+              <em><span style="padding: 3px 3px; position:relative; top: -3px; left: -2px">3<span class="supertext">rd</span></span></em>
+            </div>
+          </div>
+          
+          {% endif %}
+
+          <!-- ranking end -->          
+
+
+
+          <div>
+          {% if review.invert == "true"  %}
+           <img src="/assets/images/logos/{{ review.logo }}" alt="{{ page.title }}" class="{{ review.color }} circle responsive-img casino-logo" style="margin-bottom 0px; min-width: 100px; max-width: 140px;"></img>
+           {% endif %}
+          
+          {% if review.invert != "true" %}
+           <img src="/assets/images/logos/{{ review.logo }}" alt="{{ page.title }}" class="circle responsive-img casino-logo" style="margin-bottom: 0px;  min-width: 100px; max-width: 140px;"></img>
+           {% endif %} 
+          </div>
+       </div>
+       
+       <div class="col s4 m4 l4 hide-on-med-and-down" >
+         <div class="container" style="bottom: -10px; display: block;">
+       
+        <div class="rating-holder">
+                <div class="c-rating c-rating--big" data-rating-value="{{ review.stars }}">
+                  <button>1</button>
+                  <button>2</button>
+                  <button>3</button>
+                  <button>4</button>
+                  <button>5</button>
+                </div>
+        </div>
+       
+
+  <a href="{{ review.permalink }}">
+     <h5 class="{{ review.textcolor }}" style="padding: 6px; text-transform: uppercase; font-size: .8em;">{{ review.casino_name }}</h5>
+  </a>
+
+           <div class="promo-level-1">{{ review.primary_bonus }}</div>
+           <div class="promo-level-2">{{ review.secondary_bonus }}</div>
+         </div>
+        <div class="center hide-on-med-and-down">
+        {% if review.show_review == "true" %}  
+       <a href="{{review.url}}" class="center grey-text lighten-2" style="position:relative; left: 0px; top: 25px; font-size: 12px;"><i class="fas fa-arrow-down"></i>read review</a>
+     
+         {% endif %}
+        
+        </div>
+       </div>
+        
+        <div class="col s5 m5 hide-on-med-and-down right middle" style="padding: 0px; font-size: .9em;">
+              <ul class="collection" >
+               {% for l_item in review.large_sell %}
+               <li class="collection-item"><div>{{ l_item }}<a href="{{review.url}}" class="secondary-content"></a></div></li>
+               {% endfor %}
+              </ul>
+              <a href="{{ review.aff_link }}" class="waves-effect waves-light btn right" style="position:relative; top: 22px; left: -20px;">
+              <i class="material-icons right">send</i>Play Now</a>
+          </div> 
+        </div>
+      </div>
+    </div>
+
+    <!-- medium starts-->
+<div class="container all_radius" style="width: 100%; margin: 0px; ">
+ <div class="card-panel all_radius show-on-medium"  style="display:none;">
+    
+    
+      <div class="row">
+          <div class="col s3 m3" style="text-align: left;">
+          
+          
+            <!-- ranking -->          
+          {% if forloop.first %}
+          <div style="position: relative; font-size: 1.5em;"> 
+            
+            <div class="firstPlaces animated rubberBand delay-4s chip yellow pink-text z-depth-0"  style="text-align: left; position:relative; padding: 10px; left: -17px ; top: -17px">
+              <em><span style="padding: 3px 3px; position:relative; top: -3px; left: -2px">1<span class="supertext">st</span></span></em>
+            </div>
+          </div>
+          
+
+          {% endif %}
+
+          {% if forloop.index == 2 %}
+          <div style="position: relative; font-size: 1.5em;"> 
+            
+            <div class="firstPlaces animated rubberBand delay-4s chip yellow pink-text z-depth-0"  style="text-align: left; position:relative; padding: 10px; left: -17px ; top: -17px">
+              <em><span style="padding: 3px 3px; position:relative; top: -3px; left: -2px">2<span class="supertext">nd</span></span></em>
+            </div>
+          </div>
+          
+          {% endif %}
+
+
+         {% if forloop.index == 3 %}
+          <div style="position: relative; font-size: 1.5em;"> 
+            
+            <div class="firstPlaces animated rubberBand delay-4s chip yellow pink-text z-depth-0"  style="text-align: left; position:relative; padding: 10px; left: -17px ; top: -17px">
+              <em><span style="padding: 3px 3px; position:relative; top: -3px; left: -2px">3<span class="supertext">rd</span></span></em>
+            </div>
+          </div>
+          
+          {% endif %}
+
+          <!-- ranking end -->    
+          <div>
+        {% if page.invert == "true"  %}
+           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ review.title }}" class="{{ review.color }} circle responsive-img casino-logo" style="margin-bottom 0px; min-width: 90px; max-width: 130px;"></img>
+           {% endif %}
+          
+          {% if review.invert != "true" %}
+           <img src="/assets/images/logos/{{ review.logo }}" alt="{{ review.title }}" class="circle responsive-img casino-logo" style="margin-bottom: 0px;  min-width: 90px; max-width: 130px;"></img>
+           {% endif %} 
+          </div>
+         </div>
+       <div class="col s5 m5 center">
+         <div class="container">
+    
+     <div class="rating-holder">
+    <div class="c-rating c-rating--big" data-rating-value="{{review.stars}}">
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+      <button>5</button>
+    </div>
+  </div>
+
+
+
+  <a href="{{ review.permalink }}">
+  <h5 class="{{review.textcolor}}" style="padding: 6px; text-transform: uppercase; font-size: .8em;">{{ review.casino_name }}</h5>
+  </a>
+
+
+
+      
+           <div class="promo-level-1">{{ review.primary_bonus }}</div>
+           <div class="promo-level-2">{{ review.secondary_bonus }}</div>
+    
+            {% if review.show_review == "true" %}  
+             <div class="container center">
+              <a href="#" class="center-align grey-text lighten-2" style="position:relative; left: 0px; top: 25px; font-size: 12px;"><i class="fas fa-arrow-down"></i> read review</a> 
+              
+             </div>
+             <div>
+ 
+             </div>
+            {% endif %}  
+       </div>
+      </div>
+        <div class="col s4 m4 center">
+             <ul class="collection">
+               {% for m_item in review.medium_sell %}
+               <li class="collection-item"><div>{{ m_item }}</div></li>
+               {% endfor %}
+              </ul>
+              <a href="{{ review.aff_link }}" class="waves-effect waves-light btn right" style="position:relative; left: -12px; top: 20px;">
+              <i class="material-icons right">send</i>Play Now</a>
+          </div> 
+        </div>
+    </div>
+</div>
+       
+ <!--  small version  -->
+<div style="max-width: 100%;">
+    <div class="show-on-small"  style="display:none;">
+      <div class="col s12 m8 offset-m3 l8 offset-l3" style="padding: 0px;">
+        
+        <div class="card-panel all_radius">
+          <div class="row valign-wrapper center">
+            <div class="col s3 m3 center middle">
+            
+          {% if review.invert == "true"  %}
+           <img src="/assets/images/logos/{{ review.logo }}" alt="{{ review.casino_name }}" class="{{ review.color }} circle responsive-img casino-logo" style="margin-bottom: 0px;"></img>
+           {% endif %}
+            {% if review.invert != "true" %}
+            <img src="/assets/images/logos/{{ review.logo }}" alt="{{ review.title }}" class="circle responsive-img casino-logo" style="margin-bottom: 0px;">
+            {% endif %} 
+             
+             <p>
+                <a class="grey-text lighten-2" href="{{ review.url }}" style="position:relative; left: 0px; top: 25px; font-size: 10px;">review</a>
+             
+             </p>
+           </div>
+         
+         <div class="col s7">
+
+ <div class="rating-holder">
+    <div class="c-rating c-rating--medium" data-rating-value="{{review.stars}}">
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+      <button>5</button>
+    </div>
+  </div>
+
+  <a href="{{ review.permalink }}">
+ <h5 class="{{review.textcolor}}" style="padding: 6px; text-transform: uppercase; font-size: .8em;">{{ review.casino_name }}</h5>
+  </a>
+          <!-- bonuses in medium-down -->
+           <div class="promo-level-3">{{review.primary_bonus}}</div> <div class="promo-level-4">{{review.secondary_bonus}}</div>
+            </div>
+            <div class="col s2">
+             <a href="{{ review.aff_link }}" class="btn-floating  pulse"><i class="material-icons">arrow_right</i></a>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      {% endfor %}
+
+   </div>
+   </div>
+        
+        <!--
+          Button names
+        -->
+
+        <div class="col s12 m3 l3">
+ 
+        
+        <div class="top10" style="width: 100%; margin-top: 5px;">
+        
+       
+
+              <p class="top10__title top10__title--light">
+              <span>Top Rated Casinos</span>
+              </p>
+
+              <ul>
+
+                {% assign mid = site.reviews | sort: 'score' %}
+                {% assign sorted = mid | reverse %}
+                {% for review in sorted limit:20 %}
+
+              <li class="top10__item">
+                <span class="top10__link">
+                    <a href="{{ review.permalink }}"
+                    class="top10__link">
+                                                    <img src="/assets/images/logos/{{ review.logo }}" class="top10__img">
+                                                                            <span class="top10__name left">{{ review.casino_name }}</span>
+                                            </a>
+                    <a class="top10__visit" href="{{ review.permalink }}" target="_blank" rel="nofollow">Play</a>
+                </span>
+            </li>
+            {% endfor %}
+
+          </ul>
+          <a href="/reviews/" class="top10__all">See all casinos </a>        
+        </div>
+        
+        
+        </div> 
+    </div>
+  </span>
+</div>
+
+
+
+
+  <!--
+  #########################################
+  -->
+
+
+
+
+
+
+
+
+
+  {{ content | markdownify }}
+
+
+
+<div class="container">
+
+<section>
+  
+  <!--  <div class="container"> -->
+
+  <div class="center-align">
+
+
+   <div class="col s12 m12 l12" id="columns">
+
+
+    {% for review in paginator.posts %}
+    
+  <figure class="all_radius">
+  <p>
+    <img src="/assets/images/logos/{{ review.logo }}" alt="{{ review.title }}" class=" {% if review.invert %} {{ review.color }} {% endif %} animated tadaHover tada delay-2s responsive-img circle brand-img" style="padding: 15px; position: relative; object-fit: contain; {% if review.logosize %} width: {{ review.logosize }}; {% endif %}">
+    </p> 
+
+        <div class="rating-holder">
+          <div class="c-rating c-rating--big" data-rating-value="{{review.stars}}">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+          </div>
+        </div>
+
+        
+  <a href="{{ review.permalink | prepend: site.baseurl | replace: '//', '/' }}">
+  <h5 class="{{review.textcolor}}" style="padding: 6px; text-transform: uppercase; font-size: .9em;">{{ review.casino_name }}</h5>
+  </a>
+
+<a href="{{ review.permalink | prepend: site.baseurl | replace: '//', '/' }}">
+       <div class="promo-level-1">{{ review.primary_bonus }}</div>
+       </a>
+       <a href="{{ review.permalink | prepend: site.baseurl | replace: '//', '/' }}">
+       <div class="promo-level-2">{{ review.secondary_bonus }}</div>
+       </a>
+        <div class="container">
+          <ul class="pink-text hide-on-small-only">
+           {% for bullet in review.medium_sell %}
+          <li class="chip pink-text lighten-1"> {{ bullet }} </li>
+            {% endfor %}  
+         </ul>    
+         </div>     
+         <div class="card-action" style="padding: 6px;">
+
+         <div class="btn">
+          <a class="white-text" style="position: relative; top: -4px;" href="{{ review.aff_link }}">Claim Bonus<i class="material-icons" style="position: relative; left: 15px; top: 2px;" >send</i></a>
+         </div>
+            <div class="grey-text" style="margin: 9px; font-size: .9em;">
+           <p>{{ review.terms }}</p>
+         </div> 
+        </div>
+      </figure>
+
+
+      {% endfor %}
+    </div>
+
+   <!--  </div>  --> 
+ </section>
+
+
+
+
+
+
+
+
+
+
+  {% if paginator.total_pages > 1 %}
+  <ul class="pagination">
+      {% if paginator.first_page %}
+
+      
+      <li class="waves-effect">
+          <a href="{{ paginator.first_page_path }}">First</a>
+      </li>
+      {% endif %}
+
+      {% if paginator.previous_page %}
+      <li class="waves-effect">
+          <a href="{{ paginator.previous_page_path }}"><i class="material-icons">chevron_left</i></a>
+      </li>
+      {% endif %}
+
+      {% if paginator.page_trail %}
+        {% for trail in paginator.page_trail %}
+          <li {% if page.url == trail.path %}class="active"{% endif %}>
+              <a href="{{ trail.path }}" title="{{trail.title}}">{{ trail.num }}</a>
+          </li>
+        {% endfor %}
+      {% endif %}
+
+      {% if paginator.next_page %}
+      <li class="waves-effect">
+          <a href="{{ paginator.next_page_path }}"><i class="material-icons">chevron_right</i></a>
+      </li>
+      {% endif %}
+
+       {% if paginator.last_page %}
+      <li class="waves-effect">
+          <a href="{{ paginator.last_page_path }}">Last</a>
+      </li>
+      {% endif %}
+  </ul>
+  {% endif %}
+
+
+
+
+
+
+
+
+<h2>Heading 2 marker</h2>
+
+<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut iste, id velit, ullam unde quam modi fugit corrupti minus incidunt porro voluptatibus doloribus veritatis illo dolore doloremque error facere. Molestias, culpa iusto modi ipsum incidunt repellat consequuntur debitis. Eum omnis est voluptatibus vitae nemo accusamus enim perspiciatis itaque cumque adipisci.
+</p>
+
+
+
+  {% for my_page in site.pages %}  
+  {% if my_page.title and my_page.autogen == nil and my_page.autopage != nil %}
+
+  <div class="collection-item chip grey"  style="border-radius: 4px !important;"> 
+  <a class="white-text" href="{{ my_page.url | prepend: site.baseurl | replace: '//', '/' }}">{{ my_page.title | escape }}</a>
+  </div>
+  
+  {% endif %}
+  {% endfor %}
+
+
+<!--
+      <b>Autopage Created:</b><br>
+        <ul>
+         <li> {% for my_page in site.pages %}  
+          {% if my_page.title and my_page.autogen == nil and my_page.autopage != nil %}
+          <a class="collection-item" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+          {% endif %}
+        {% endfor %}
+        </li>
+      </ul>
+-->        
+  
+
+
+
+  <!-- 
+    Showing buttons to move to the next and to the previous list of posts (pager buttons).
+  -->
+  {% if paginator.total_pages > 1 %}
+  <ul class="pagination">
+      {% if paginator.first_page %}
+
+      
+      <li class="waves-effect">
+          <a href="{{ paginator.first_page_path  }}">First</a>
+      </li>
+      {% endif %}
+
+      {% if paginator.previous_page %}
+      <li class="waves-effect">
+          <a href="{{ paginator.previous_page_path }}"><i class="material-icons">chevron_left</i></a>
+      </li>
+      {% endif %}
+
+      {% if paginator.page_trail %}
+        {% for trail in paginator.page_trail %}
+          <li {% if page.url == trail.path %}class="active"{% endif %}>
+              <a href="{{ trail.path }}" title="{{trail.title}}">{{ trail.num }}</a>
+          </li>
+        {% endfor %}
+      {% endif %}
+
+      {% if paginator.next_page %}
+      <li class="waves-effect">
+          <a href="{{ paginator.next_page_path }}"><i class="material-icons">chevron_right</i></a>
+      </li>
+      {% endif %}
+      
+      {% if paginator.last_page %}
+      <li class="waves-effect">
+          <a href="{{ paginator.last_page_path }}">Last</a>
+      </li>
+      {% endif %}
+  </ul>
+  {% endif %}
+
+
+
+
+
+</div>
