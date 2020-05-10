@@ -1,0 +1,120 @@
+
+         <table>
+           <tbody>
+             {% if page.casino_owner %} 
+               <tr></tr>
+                 <th>Owner</th>
+                 <td> {{ page.casino_owner }} </td>
+               </tr>
+               {% endif %}
+   
+               {% if page.website %} 
+               <tr>
+                 <th>Website</th>
+                 <td> <a href="{{ page.aff_link}}"><div>{{ page.website }}</div></a></td>
+               </tr>
+               {% endif %}
+               
+               {% if page.terms %} 
+               <tr>
+                 <th>Terms</th>
+                 <td> <a href="{{ page.aff_link_terms}}"> <div>{{ page.terms }}</div> </a></td>
+               </tr>
+               {% endif %}
+   
+               {% if  (page.year != "false") %} 
+               {% if  (page.year != ".na") %} 
+               <tr>
+                 <th>Founded</th>
+                 <td> {% capture tagscommas %}
+                   {% for tag in page.year %}
+                       {{tag}}{% unless forloop.last %}, {% endunless %}
+                   {% endfor %}
+                   {% endcapture %}
+                   {{tagscommas}} </td>
+               </tr>
+               {% endif %}
+               {% endif %}
+   
+               {% if page.languages %} 
+               <tr>
+                 <th>Licences</th>
+                 <td> {% capture tagscommas %}
+                   {% for tag in page.licences %}
+                       {{tag}}{% unless forloop.last %}, {% endunless %}
+                   {% endfor %}
+                   {% endcapture %}
+                   {{tagscommas}} </td>
+               </tr>
+               {% endif %}
+   
+               {% if page.languages %} 
+               <tr>
+                 <th>Languages</th>
+                 <td> {% capture tagscommas %}
+                   {% for tag in page.languages %}
+                       {{tag}}{% unless forloop.last %}, {% endunless %}
+                   {% endfor %}
+                   {% endcapture %}
+                   {{tagscommas}} </td>
+               </tr>
+               {% endif %}
+   
+               {% if page.rtp %} 
+               <tr>
+                 <th>RTP</th>
+                 <td> {% capture tagscommas %}
+                   {% for tag in page.rtp %}
+                       {{tag}}{% unless forloop.last %}, {% endunless %}
+                   {% endfor %}
+                   {% endcapture %}
+                   {{tagscommas}} </td>
+               </tr>
+               {% endif %}
+   
+               {% if page.manual_flushing %} 
+               <tr>
+                 <th>Manual Flushing</th>
+                 <td> {% capture tagscommas %}
+                   {% for tag in page.manual_flushing %}
+                     {{tag}}{% unless forloop.last %}, {% endunless %}
+                   {% endfor %}
+                   {% endcapture %}
+                   {{tagscommas}} </td>
+               </tr>
+               {% endif %}
+   
+               {% if page.games_by %} 
+               <tr>
+                 <th>Software</th>
+                 <td> {% capture tagscommas %}
+                   {% for tag in page.games_by %}
+                     {{tag}}{% unless forloop.last %}, {% endunless %}
+                   {% endfor %}
+                   {% endcapture %}
+                   {{ tagscommas }} </td>
+                 </tr>
+               {% endif %}
+
+               {% if page.affiliate_program %} 
+               <tr>
+                 <th>Affiliate Program</th>
+                 <td> {% capture tagscommas %}
+                   {% for tag in page.affiliate_program %}
+                     {{tag}}{% unless forloop.last %}, {% endunless %}
+                   {% endfor %}
+                   {% endcapture %}
+                   {{ tagscommas }} </td>
+                 </tr>
+               {% endif %}
+
+
+             </tbody>
+           </table>
+           
+  
+           
+
+  
+  
+  

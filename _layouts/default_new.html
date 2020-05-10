@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+    {% include head.html %}
+    <body>
+
+    {% include header.html %}
+
+    {% if page.url == "/index.html" %}
+    {% include 3cards_all.html %}
+    {% endif %}
+
+    {% include casino_deets_2.html %}
+
+
+    <p><b>Manual Pagination:</b><br>
+        {% for my_page in site.pages %}  
+          {% if my_page.title and my_page.autogen == nil and my_page.autopage == nil %}
+          <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+          {% endif %}
+        {% endfor %}
+      </p>
+      <p><b>Autopage Created:</b><br>
+      {% for my_page in site.pages %}  
+        {% if my_page.title and my_page.autogen == nil and my_page.autopage != nil %}
+        <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+        {% endif %}
+      {% endfor %}
+      </p>
+
+      
+    {% include footer.html %}
+
+
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <script src="{{ site.baseurl }}/assets/javascript/main.js"></script>
+
+
+              <script>
+                $(document).ready(function(){
+                    $('.parallax').parallax();
+                });
+            </script>
+
+
+<!---
+  {% include google-analytics.html %}
+--->
+
+
+            <script>
+                
+                document.addEventListener('DOMContentLoaded', function() {
+                    var elems = document.querySelectorAll('.sidenav');
+                    var instances = M.Sidenav.init(elems);
+                });
+
+
+
+                const slider = document.querySelector('.slider');
+
+                M.Slider.init(slider, {
+                    indicators: false,
+                    height: 450,
+                    transition: 120,
+                    interval: 12000,
+                    fullWidth: true
+                });
+
+                $(document).ready(function(){
+                    $('.collapsible').collapsible();
+                });
+
+
+                
+
+                (function () {  //closure to avoid any global variables
+                    var timeoutScroll,
+                        $navbar = $('#navbar'),
+                        $window = $(window);
+
+                    function setOffset() {
+                        bannerH = $('header').height();
+                    }
+
+                    function navTop() {
+                        if ($window.scrollTop() > bannerH) {
+                            $navbar.stop().animate({
+                                top: 0
+                            }, 100);
+                        } else {
+                            $navbar.stop().animate({
+                                top: -61
+                            }, 100);
+                        }
+                    }
+
+                    setOffset();
+
+                    $window.scroll(function () {
+                        clearTimeout(timeoutScroll);
+                        timeoutScroll = setTimeout(navTop, 35);
+                    });
+                })();
+
+                $(document).ready(function(){
+                    $('ul.tabs').tabs({
+                        swipeable : true,
+                        responsiveThreshold : 1920
+                    });
+                });
+
+            </script>
+
+   </body>
+</html>

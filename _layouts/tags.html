@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+    {% include head.html %}
+    <body>
+
+    {% include header.html %}
+
+
+{% if page.show_review == 'false' %}
+ <div class="card-panel red white-text">
+ <div class="container">CASINO CLOSED: this casino is no longer operating. See recommended casinos below or click for a full list of recommended casinos.</div>
+ </div>
+{% endif %}
+
+
+{% include casino_deets_2.html %}
+
+{{ content | markdownify }}
+
+
+    {% include footer.html %}
+
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <script src="{{ site.baseurl }}/assets/javascript/main.js"></script>
+
+
+              <script>
+                $(document).ready(function(){
+                    $('.parallax').parallax();
+                });
+            </script>
+
+
+            <script>
+                
+                document.addEventListener('DOMContentLoaded', function() {
+                    var elems = document.querySelectorAll('.sidenav');
+                    var instances = M.Sidenav.init(elems);
+                });
+
+
+
+                const slider = document.querySelector('.slider');
+
+                M.Slider.init(slider, {
+                    indicators: false,
+                    height: 450,
+                    transition: 120,
+                    interval: 12000,
+                    fullWidth: true
+                });
+
+                $(document).ready(function(){
+                    $('.collapsible').collapsible();
+                });
+
+
+                
+
+                (function () {  //closure to avoid any global variables
+                    var timeoutScroll,
+                        $navbar = $('#navbar'),
+                        $window = $(window);
+
+                    function setOffset() {
+                        bannerH = $('header').height();
+                    }
+
+                    function navTop() {
+                        if ($window.scrollTop() > bannerH) {
+                            $navbar.stop().animate({
+                                top: 0
+                            }, 100);
+                        } else {
+                            $navbar.stop().animate({
+                                top: -61
+                            }, 100);
+                        }
+                    }
+
+                    setOffset();
+
+                    $window.scroll(function () {
+                        clearTimeout(timeoutScroll);
+                        timeoutScroll = setTimeout(navTop, 35);
+                    });
+                })();
+
+                $(document).ready(function(){
+                    $('ul.tabs').tabs({
+                        swipeable : true,
+                        responsiveThreshold : 1920
+                    });
+                });
+
+            </script>
+
+   </body>
+</html>

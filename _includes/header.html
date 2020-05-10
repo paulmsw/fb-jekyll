@@ -26,10 +26,9 @@
               <ul class="right navigation" id="nav-large">
               <li class="navigation">
               <a href="{{ site.baseurl }}" class="hide-on-small-only"><i class="show-on-small hide-on-medium-and-up material-icons md-24">home</i></a></li>
-                <li class="show-on-medium-and-up navigation"><a href="/bonuses/">Casino</a></li>
-                <li class="show-on-medium-and-up navigation"><a href="/casino/">Bingo</a></li>
-                <li class="show-on-medium-and-up navigation"><a href="/software/">Games</a></li>
-                <li class="show-on-medium-and-up navigation"><a href="/software/">Crypto</a></li>
+                <li class="show-on-medium-and-up navigation"><a href="/reviews/">Casino</a></li>
+                <li class="show-on-medium-and-up navigation"><a href="/casinos/ethereum/">ETH</a></li>
+                <li class="show-on-medium-and-up navigation"><a href="/casinos/bitcoin/">BTC</a></li>
  
             </ul>
           </div>
@@ -43,7 +42,6 @@
       <div class="background">
       <img src="{{ site.baseurl }}/assets/images/logo.png" alt="" style="right: 10px; padding: 20px; position: absolute; width: 55%;">  
 
-        <img src="{{ site.baseurl }}/assets/images/heros/panel_sky2.jpg">
       </div>
   
 
@@ -58,26 +56,7 @@
 
    <div class="collection with-header">
 
-      <b>Manual Pagination:</b><br>
-       <ul>
-         <li> {% for my_page in site.pages %}  
-            {% if my_page.title and my_page.autogen == nil and my_page.autopage == nil %}
-            <a class= "collection-item" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-            {% endif %}
-          {% endfor %}
-          </li>
-       </ul>
-        
-        <b>Autopage Created:</b><br>
-        <ul>
-         <li> {% for my_page in site.pages %}  
-          {% if my_page.title and my_page.autogen == nil and my_page.autopage != nil %}
-          <a class="collection-item" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-          {% endif %}
-        {% endfor %}
-        </li>
-      </ul>
-  
+    
 
 <ul>
    {% for review in site.reviews %}
@@ -88,16 +67,6 @@
 </div>
  
 </div>
-
-    </div>
-    
-    </li>
-    
-   
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        
-      </div>
-      
 
             
      {%- endif -%}

@@ -1,0 +1,24 @@
+<div class="top10" style="width: 100%;  margin: 20px 0px 0px 0px;">
+    <p class="top10__title top10__title--light">
+    <span>Best Casinos by Region</span>
+    </p>
+
+    <ul>
+
+      {% assign mid = site.countries | sort: 'abbr' %}
+      {% for review in mid limit:10 %}
+  
+      <li class="top10__item">
+        <a href="{{ review.permalink }}" class="flag__link">
+     <div>   
+        <span class="flag__link">
+             <img src="/assets/images/flags/{{ review.flag }}" class="flag__img">
+                                                                    <span class="top10__name left">{{ review.country }}</span>
+        </span> 
+      </div>
+      </a>
+    </li>    
+  
+  {% endfor %}
+</ul>
+</div>

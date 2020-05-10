@@ -1,0 +1,103 @@
+  <section style="margin-top: .7em; margin-bottom: .7em;">
+    <div class="center-align">
+  
+  
+     <div id="columns">
+  
+  
+      {% for review in paginator.posts %}
+      
+    <figure class="all_radius">
+    <p>
+      <img src="/assets/images/logos/{{ review.logo }}" alt="{{ review.title }}" class=" {% if review.invert %} {{ review.color }} {% endif %} animated tadaHover tada delay-2s responsive-img circle brand-img" style="padding: 15px; position: relative; object-fit: contain; {% if review.logosize %} width: {{ review.logosize }}; {% endif %}">
+      </p> 
+  
+          <div class="rating-holder">
+            <div class="c-rating c-rating--big" data-rating-value="{{review.stars}}">
+              <button>1</button>
+              <button>2</button>
+              <button>3</button>
+              <button>4</button>
+              <button>5</button>
+            </div>
+          </div>
+  
+          
+    <a href="{{ review.permalink | prepend: site.baseurl | replace: '//', '/' }}">
+    <h5 class="{{review.textcolor}}" style="padding: 6px; text-transform: uppercase; font-size: .9em;">{{ review.casino_name }}</h5>
+    </a>
+  
+  <a href="{{ review.permalink | prepend: site.baseurl | replace: '//', '/' }}">
+         <div class="promo-level-1">{{ review.primary_bonus }}</div>
+         </a>
+         <a href="{{ review.permalink | prepend: site.baseurl | replace: '//', '/' }}">
+         <div class="promo-level-2">{{ review.secondary_bonus }}</div>
+         </a>
+          <div class="container">
+            <ul class="pink-text hide-on-small-only">
+             {% for bullet in review.medium_sell %}
+            <li class="chip pink-text lighten-1"> {{ bullet }} </li>
+              {% endfor %}  
+           </ul>    
+           </div>     
+           <div class="card-action" style="padding: 6px;">
+  
+           <div class="btn">
+            <a class="white-text" style="position: relative; top: -4px;" href="{{ review.aff_link }}">Claim Bonus<i class="material-icons" style="position: relative; left: 15px; top: 2px;" >send</i></a>
+           </div>
+           <a href="{{ review.aff_link_terms }}">
+            <div class="grey-text" style="margin: 9px; font-size: .9em;">
+              {{ review.terms }}
+            </div> 
+           </a>   
+           
+          </div>
+     </figure>
+    {% endfor %}
+  
+  </div>
+ 
+ </section>
+  
+  <div class="center">
+    {% if paginator.total_pages > 1 %}
+    <ul class="pagination">
+        {% if paginator.first_page %}
+  
+        
+        <li class="waves-effect">
+            <a href="{{ paginator.first_page_path }}">First</a>
+        </li>
+        {% endif %}
+  
+        {% if paginator.previous_page %}
+        <li class="waves-effect">
+            <a href="{{ paginator.previous_page_path }}"><i class="material-icons">chevron_left</i></a>
+        </li>
+        {% endif %}
+  
+        {% if paginator.page_trail %}
+          {% for trail in paginator.page_trail %}
+            <li {% if page.url == trail.path %}class="active"{% endif %}>
+                <a href="{{ trail.path }}" title="{{trail.title}}">{{ trail.num }}</a>
+            </li>
+          {% endfor %}
+        {% endif %}
+  
+        {% if paginator.next_page %}
+        <li class="waves-effect">
+            <a href="{{ paginator.next_page_path }}"><i class="material-icons">chevron_right</i></a>
+        </li>
+        {% endif %}
+  
+         {% if paginator.last_page %}
+        <li class="waves-effect">
+            <a href="{{ paginator.last_page_path }}">Last</a>
+        </li>
+        {% endif %}
+    </ul>
+    {% endif %}
+
+  </div>
+  
+  

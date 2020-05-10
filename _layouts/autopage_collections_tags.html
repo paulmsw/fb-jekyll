@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cats
 autopages:
   permalink: /tag/:tag
 pagination:
@@ -20,7 +20,7 @@ pagination:
 Page {{page.pagination_info.curr_page}} of {{page.pagination_info.total_pages}} in <b>{% if page.autopages %}{{page.autopages.display_name}}{% endif %}</b>.
 </p> 
 
-  {{ content | markdownify }}
+  {{ content }}
 
   
 
@@ -49,11 +49,11 @@ Page {{page.pagination_info.curr_page}} of {{page.pagination_info.total_pages}} 
           
           <div>
           {% if page.invert == "true"  %}
-           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="{{ page.color }} circle responsive-img casino-logo" style="margin-bottom 0px; min-width: 100px; max-width: 140px;"></img>
+           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="{{ page.color }} circle responsive-img casino-logo" style="margin-bottom 0px; min-width: 100px; max-width: 140px;">
            {% endif %}
           
           {% if page.invert != "true" %}
-           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="circle responsive-img casino-logo" style="margin-bottom: 0px;  min-width: 100px; max-width: 140px;"></img>
+           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="circle responsive-img casino-logo" style="margin-bottom: 0px;  min-width: 100px; max-width: 140px;">
            {% endif %} 
           </div>
        </div>
@@ -115,11 +115,11 @@ Page {{page.pagination_info.curr_page}} of {{page.pagination_info.total_pages}} 
           
           <div>
         {% if page.invert == "true"  %}
-           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="{{ page.color }} circle responsive-img casino-logo" style="margin-bottom 0px; min-width: 100px; max-width: 140px;"></img>
+           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="{{ page.color }} circle responsive-img casino-logo" style="margin-bottom 0px; min-width: 100px; max-width: 140px;">
            {% endif %}
           
           {% if page.invert != "true" %}
-           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="circle responsive-img casino-logo" style="margin-bottom: 0px;  min-width: 100px; max-width: 140px;"></img>
+           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="circle responsive-img casino-logo" style="margin-bottom: 0px;  min-width: 100px; max-width: 140px;">
            {% endif %} 
           </div>
          </div>

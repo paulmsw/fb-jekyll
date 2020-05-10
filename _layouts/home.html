@@ -5,11 +5,6 @@ layout: default
 
 
 
-
-
-
-
-
 {{ page.casino_owner }}
 
 {% for brand in page.alt.brand %}
@@ -18,12 +13,48 @@ layout: default
 <span class="text_item"><a href="{{ filter_path }}">{{ brand }}</a></span>
 {% endfor %}
 
+<section style="border-top: 1px solid #ffffff; background: linear-gradient(140deg, rgb(10, 10, 10) 10%, rgb(43, 40, 40) 50%, rgb(97, 92, 92) 100%);">
+  <div class="container">
+    <span>
+      <div class="row" style="margin: 10px; vertical-align: auto;">
+          <div class="col s12 m9 l9" style="padding: 10px; margin-bottom: 20px; text-align: left;">
+            <div>
+              <h2> Bringing The Best Casino & Bingo</h2>
+              <p>
+                Why take chances? with over three decades experience in the competitive online casino industy. Flashbitch is 100% dedicated to bringing you the best casino and bingo experience. Our reviews, ratings, bonuses and promotions ensure your playing pleasure. We constantly add new places to play online every month and we stay ahead of the latest innovations and online gaming trends.</p>
+                <br>
+                <p>We list approximately 1000 brands and provide detailed reviews as well as "at-a-glance" overviews for those who just want to get into the action, zero delays, no messing about!</p>
+                <p>With a competitive market like the online casino industry, you cay never get bored for the choice of online casinos is incredibly vast. There are new online casinos emerging every day, so there is always a new place where you can try your luck.</p>
+          </div>
+     </div>
+          <div class="col s12 m3 l3">
 
 
+  
+       
+            
+          </div> 
+      </div>
+    </span>
+  </div>
+</section>
+  
+  
+<section>
+<div class="container">
+  <div class="row" style="margin: 20px; text-align: left;">
+  <h2>Editors Choice</h2> 
+  <p> </p>
+</div>
+</div>
+</section>
 
 <div class="container">
+  
+  
+   
   <span>
-    <div class="row" style="margin-top: 20px;">
+    <div class="row" style="margin-bottom: 5px; padding: 0px;">
 
         <div class="col s12 m9 l9" style="margin: 0px; text-align: left;">
           <div>
@@ -82,11 +113,15 @@ layout: default
 
           <div>
           {% if review.invert == "true"  %}
-           <img src="/assets/images/logos/{{ review.logo }}" alt="{{ page.title }}" class="{{ review.color }} circle responsive-img casino-logo" style="margin-bottom 0px; min-width: 100px; max-width: 140px;"></img>
-           {% endif %}
+          <a href="{{ review.aff_link }}">
+          <img src="/assets/images/logos/{{ review.logo }}" alt="{{ page.title }}" class="{{ review.color }} circle responsive-img casino-logo" style="margin-bottom 0px; min-width: 100px; max-width: 140px;"></img>
+          </a>
+          {% endif %}
           
           {% if review.invert != "true" %}
+          <a href="{{ review.aff_link }}">
            <img src="/assets/images/logos/{{ review.logo }}" alt="{{ page.title }}" class="circle responsive-img casino-logo" style="margin-bottom: 0px;  min-width: 100px; max-width: 140px;"></img>
+          </a>
            {% endif %} 
           </div>
        </div>
@@ -114,7 +149,8 @@ layout: default
          </div>
         <div class="center hide-on-med-and-down">
         {% if review.show_review == "true" %}  
-       <a href="{{review.url}}" class="center grey-text lighten-2" style="position:relative; left: 0px; top: 25px; font-size: 12px;"><i class="fas fa-arrow-down"></i>read review</a>
+
+        <a href="{{ review.url }}" class="center grey-text lighten-2" style="position:relative; left: 0px; top: 25px; font-size: 12px;">read review</a>
      
          {% endif %}
         
@@ -127,7 +163,7 @@ layout: default
                <li class="collection-item"><div>{{ l_item }}<a href="{{review.url}}" class="secondary-content"></a></div></li>
                {% endfor %}
               </ul>
-              <a href="{{ review.aff_link }}" class="waves-effect waves-light btn right" style="position:relative; top: 22px; left: -20px;">
+              <a href="{{ review.aff_link }}" class="waves-effect waves-light white-text btn right" style="position:relative; top: 22px; left: -20px;">
               <i class="material-icons right">send</i>Play Now</a>
           </div> 
         </div>
@@ -214,7 +250,7 @@ layout: default
     
             {% if review.show_review == "true" %}  
              <div class="container center">
-              <a href="#" class="center-align grey-text lighten-2" style="position:relative; left: 0px; top: 25px; font-size: 12px;"><i class="fas fa-arrow-down"></i> read review</a> 
+              <a href="{{ review.permalink }}" class="center-align grey-text lighten-2" style="position:relative; left: 0px; top: 25px; font-size: 12px;">read review</a> 
               
              </div>
              <div>
@@ -229,7 +265,7 @@ layout: default
                <li class="collection-item"><div>{{ m_item }}</div></li>
                {% endfor %}
               </ul>
-              <a href="{{ review.aff_link }}" class="waves-effect waves-light btn right" style="position:relative; left: -12px; top: 20px;">
+              <a href="{{ review.aff_link }}" class="waves-effect waves-light white-text btn right" style="position:relative; left: -12px; top: 20px;">
               <i class="material-icons right">send</i>Play Now</a>
           </div> 
         </div>
@@ -297,7 +333,7 @@ layout: default
         <div class="col s12 m3 l3">
  
         
-        <div class="top10" style="width: 100%; margin-top: 5px;">
+        <div class="top10 hide-on-small-only" style="width: 100%; margin-top: 5px;">
         
        
 
@@ -309,7 +345,7 @@ layout: default
 
                 {% assign mid = site.reviews | sort: 'score' %}
                 {% assign sorted = mid | reverse %}
-                {% for review in sorted limit:20 %}
+                {% for review in sorted limit:10 %}
 
               <li class="top10__item">
                 <span class="top10__link">
@@ -336,27 +372,57 @@ layout: default
 
 
 
-  <!--
-  #########################################
-  -->
 
 
 
 
+<section class="black grey-text" style="border-top: 2px solid #ffffff; background: linear-gradient(140deg, rgb(10, 10, 10) 10%, rgb(43, 40, 40) 50%, rgb(97, 92, 92) 100%);">
+
+
+<div class="container dark">
+  <span>
+    <div class="row" style="margin: 10px;">
+
+        <div class="col s12 m9 l9" style="padding: 10px; margin-bottom: 30px; text-align: left;">
+          <div>
+      
+      <p>
+        {{ content | markdownify }}
+      </p>
+        </div>
+   </div>
+        
+
+        <div class="col s12 m3 l3" style="padding: 10px; text-align: left;">
+          
+         
+          <!--  <h3>Top Quality</h3>  
+          Enim, ipsum nobis exercitationem et reiciendis sequi accusamus quasi minima cupiditate nemo, nulla, incidunt esse velit odit consequuntur eveniet dicta maiores rerum.  -->
+          
+        </div> 
+    </div>
 
 
 
+  </span>
+</div>
+</section>
 
-
-  {{ content | markdownify }}
-
-
-
-<div class="container">
 
 <section>
-  
-  <!--  <div class="container"> -->
+  <div class="container">
+    <div class="row" style="margin: 20px; text-align: left;">
+      <h2>Casinos At-A-Glance</h2> 
+    <p> </p>
+  </div>
+  </div>
+  </section>
+
+
+
+<section style="margin-top: 0;">
+
+  <div class="container">
 
   <div class="center-align">
 
@@ -404,23 +470,25 @@ layout: default
          <div class="btn">
           <a class="white-text" style="position: relative; top: -4px;" href="{{ review.aff_link }}">Claim Bonus<i class="material-icons" style="position: relative; left: 15px; top: 2px;" >send</i></a>
          </div>
-            <div class="grey-text" style="margin: 9px; font-size: .9em;">
-           <p>{{ review.terms }}</p>
-         </div> 
+         <a href="{{ review.aff_link_terms }}">
+          <div class="grey-text" style="margin: 9px; font-size: .9em;">
+            {{ review.terms }}
+          </div> 
+         </a>   
+         
         </div>
       </figure>
-
-
       {% endfor %}
-    </div>
 
-   <!--  </div>  --> 
+
+
+
+
+
+</div>
+
+
  </section>
-
-
-
-
-
 
 
 
@@ -468,13 +536,6 @@ layout: default
 
 
 
-
-
-
-<h2>Heading 2 marker</h2>
-
-<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut iste, id velit, ullam unde quam modi fugit corrupti minus incidunt porro voluptatibus doloribus veritatis illo dolore doloremque error facere. Molestias, culpa iusto modi ipsum incidunt repellat consequuntur debitis. Eum omnis est voluptatibus vitae nemo accusamus enim perspiciatis itaque cumque adipisci.
-</p>
 
 
 
@@ -546,7 +607,10 @@ layout: default
   {% endif %}
 
 
-
-
-
 </div>
+
+
+  
+
+  
+  

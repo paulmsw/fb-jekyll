@@ -1,0 +1,9 @@
+<div style="padding-right: 25px;">
+    {% if page.deposit_methods %}
+    {% for tag in page.tags %}
+    <div class="collection-item chip grey lighten-2"  style="border-radius: 4px !important;">
+      <a href="/">{{ tag }}</a>
+    </div>
+    {% endfor %}
+    {% endif %}  
+  </div>

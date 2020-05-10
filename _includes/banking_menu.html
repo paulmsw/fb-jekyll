@@ -1,0 +1,10 @@
+
+      {% assign mid = site.data.banking %}
+      {% for banking in mid limit:5 %}
+
+        <p>  
+        <a class="white-text" href="{{ banking.permalink }}">
+        {{ banking.name }}</a>
+        </p>
+        
+     {% endfor %}

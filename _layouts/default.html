@@ -2,61 +2,23 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
     {% include head.html %}
     <body>
-
-    {% include header.html %}
-
-
-{% if page.url == "/index.html" %}
-{% include slider.html %}
-{% endif %}
-
-{% if page.show_review == 'false' %}
- <div class="card-panel red white-text">
- <div class="container">CASINO CLOSED: this casino is no longer operating. See recommended casinos below or click for a full list of recommended casinos.</div>
- </div>
-{% endif %}
-
-{% if page.url != "/index.html" %}
-{% include casino_deets_1.html %}
-{% endif %}
-
     
-
-  
-
- <div class="centre-align">
-        {% if page.hero_img3 %}
-            <div class="parallax-container z-depth-0 valign-wrapper">
-                <!-- games chips -->
-            
-                        <div class="container centre-align" style="width: 95%;  margin: auto;">
-                        {% include 1st_card.html %}
-                        </div>
-            
-          
-
-                <div class="parallax z-depth-1">
-                    <img src="{{ site.baseurl }}/assets/images/heros/{{ page.hero_img3 }}">
-                </div>
-            </div>
-            <!-- main breadcumb under head pic-->
-            {% include data_panel.html %}
-        {% endif %}        
-        </div>
+        {% include header.html %}
 
 
 
-
-
-
-
-
-
-    {{ content }}
-
+        {% if page.title contains "CLOSED" %}
+        {% include 3cards_mob.html %} {% else %}
+        {% include 3cards_all.html %}
+        {% endif %}
 
         
-{% include score_bars2.html %}
+        
+        {% if page.url != "/index.html" %}
+        {% include casino_deets_1.html %}
+        {% endif %}
+
+       
 
             {% include footer.html %}
     
@@ -71,10 +33,9 @@
                     $('.parallax').parallax();
                 });
             </script>
-
-
-
-  {% include google-analytics.html %}
+            
+            
+            {% include google-analytics.html %}
 
 
             <script>
@@ -141,5 +102,6 @@
 
             </script>
 
+</div>
    </body>
 </html>

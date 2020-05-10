@@ -1,0 +1,10 @@
+     {% assign mid = site.reviews | sort: 'score' %}
+      {% assign sorted = mid | reverse %}
+      {% for review in sorted limit:5 %}
+
+        <p>  
+        <a class="white-text" href="{{ review.permalink }}">
+        {{ review.casino_name }}</a>
+        </p>
+        
+     {% endfor %}

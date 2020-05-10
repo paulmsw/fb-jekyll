@@ -1,20 +1,19 @@
-<div class="container">
+<div class="container dark">
   <span>
-    <div class="row" style="margin-top: 0px;">
+    <div class="row" style="margin: 0px;">
       <div class="col s12 m9 l9" style="margin: 0px; text-align: left;">
       
         <div class="content-hero " style="margin-top: 20px">
           <div class="ch-main__info top_radius" style="width: 100%; background: linear-gradient(140deg, rgb(10, 10, 10) 10%, rgb(255, 255, 255) 90%, rgb(255, 255, 255) 70%);">
             
-            <span><h1 class="ch-title" style="text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px;">{{ page.casino_name }} 
+            <span><h1 class="ch-title" style="font-size: 36px; text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px;">{{ page.casino_name }} 
              </h1></span>
     
-            <span><img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="{{ page.color }} right circle responsive-img casino-logo-head right" style="position: absolute; min-width: 100px; max-width: 140px;"></img></span>
+            <span><img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="{{ page.color }} right circle responsive-img casino-logo-head right" style="position: absolute; min-width: 100px; max-width: 100px;"></img></span>
         
-            <div class="ch-rating" style="text-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px;">
-             <span> {{ page.score}}/1000</span>
-             <span class="star-holder middle">
-              <div class="c-rating c-rating--big star-rating" data-rating-value="{{page.stars}}">
+            <div class="ch-rating" style="text-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px; ">
+             <span class="star-holder">
+              <div class="c-rating c-rating--huge star-rating" data-rating-value="{{page.stars}}" style="left: -20px;">
                 <button>1</button>
                 <button>2</button>
                 <button>3</button>
@@ -34,310 +33,298 @@
               {% if page.primary_bonus != ".na.character" %} {{ page.primary_bonus}}{% endif %}, {% if page.secondary_bonus != ".na.character" %} {{ page.secondary_bonus}}{% endif %}
             </div>
 
-            <div class="ch-rating" style="text-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px;">
-              <a class="waves-effect waves-light btn-large white-text" style="width: 100%;" >Claim Bonus</a>
+            {% include conditional_button.html %}
+          </div>
+       
+            <p class="top10__all" style="padding-right: 50px; padding-left: 50px;">
+              Players Accepted:
+            {% if page.restricted contains "United Kingdom"%} {% else %} <a href="{{ page.aff_link_terms }}"><span class="flag"><img src="/assets/images/flags/Great-Britain-flag.png" alt="United Kingdom"></span></a> {% endif %}
+            {% if page.restricted contains "Canada"%} {% else %} <a href="{{ page.aff_link_terms }}"><span class="flag"><img src="/assets/images/flags/Canada-flag.png" alt="Canada"></span></a> {% endif %}
+            {% if page.restricted contains "[56]"%} {% else %} <a href="{{ page.aff_link_terms }}"><span class="flag"><img src="/assets/images/flags/USA-flag.png" alt="United States of America"></span></a> {% endif %}
+            
+            {% if page.restricted contains "[6]"%} {% else %} <a href="{{ page.aff_link_terms }}"><span class="flag"><img src="/assets/images/flags/Australia-flag.png" alt="Australia"></span></a> {% endif %}
+            
+            {% if page.restricted contains "South Africa"%} {% else %} <a href="{{ page.aff_link_terms }}"><span class="flag"><img src="/assets/images/flags/South-Africa-flag.png" alt="South Africa"></span></a> {% endif %}
+            {% if page.restricted contains "New Zealand"%} {% else %}  <a href="{{ page.aff_link_terms }}"><span class="flag"><img src="/assets/images/flags/New-Zealand-flag.png" alt="New Zealand"></span></a>  {% endif %}
+
+   
+ 
+          </p>
+        </div>
+
+        
+        <!--
+        seperator
+        -->
+
+        <div class="card all_radius">
+        
+    
+       <!--  sep -->
+
+        <div class="card-title valign-wrapper review-heading top_radius">
+          <a name="review" ></a>
+         <i class="fas fa-thumbs-up green-text left" style="margin-bottom: 5px;"></i><h7>{{ page.casino_name }} review</h7>  
+        </div>
+
+        <div class="ch-main__info">
+
+
+
+          {% if page.large_sell %}
+
+        <ul class="list">
+          {% for pro in page.large_sell %}
+          <div> <li class="waves-effect">
+            <div class="valign-wrapper">
+              <i class="fas fa-plus left green-text " style="top: -20px;"> </i>
+              <div class="title pros-cons">
+                {{ pro }}<br>
+               
+              </div>
+            </div>
+          </li></div>
+          {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if page.large_sell %}
+        <hr class="list-divider">
+        <ul class="list">
+          {% for con in page.cons %}
+          <div> <li class="waves-effect">
+            <div class="valign-wrapper">
+              <i class="fas fa-minus left red-text "> </i>
+              <div class="title pros-cons">
+                {{ con }}<br>
+              </div>
 
             </div>
-          </div>
-          
-            <p class="top10__all">
-            <a href="{{ page.aff_link_terms }}"><span>{{ page.terms }}</span></a>
-            </p>
-        </div>
-
-
-        <!---
-        seperator
-        --->
-
-        <div class="card">
-          <div class="card-title valign-wrapper review-heading">
-           <i class="fas fa-thumbs-up green-text left"></i><h7>{{ page.casino_name }} review</h7>  
-          </div>
-
-          <div class="ch-main__info">
-          <h8 class="subheader">Pros</h8>
-          <ul class="list">
-            {% for pro in page.large_sell %}
-            <div> <li class="waves-effect">
-              <div class="valign-wrapper">
-                <i class="fas fa-plus circle left white-text green" style="top: -20px;"> </i>
-                <div class="title">
-                  {{ pro }}<br>
-                 
-                </div>
-              </div>
-            </li></div>
-            {% endfor %}
-          </ul>
-
-          <hr class="list-divider">
-          <h8 class="subheader">Cons</h8>
-          <ul class="list">
-            {% for con in page.cons %}
-            <div> <li class="waves-effect">
-              <div class="valign-wrapper">
-                <i class="fas fa-minus circle left white-text red"> </i>
-                <div class="title">
-                  {{ con }}<br>
-                 
-                </div>
-
-              </div>
-            </li></div> 
-            {% endfor %}
-          </ul>
-        </div>
+          </li></div> 
+          {% endfor %}
+        </ul>
+        {% endif %}
+  
       </div>
+
+      <div class="top10__all">
+      <a href="{{ page.aff_link }}"><h7> Play Now </h7> </a>   
+      
+      </div>
+     
+   <!--  sep -->
+
     </div>
-       <!---
-        seperator
-        --->
+   
+    <div class="card all_radius" style="width: 100%;">
+
+      <div class="card-title valign-wrapper review-heading">
+        <a name="review" ></a>
+       <i class="fas fa-info-circle green-text left" style="margin-bottom: 5px;"></i><h7>{{ page.casino_name }} information</h7>  
+      </div>
+    
+    <div class="review-body bottom_radius">
+      <div class="list tably" style="text-align: left; color: #7a7f85; margin-top: 5px;">
+      {% include review-table2.html %}
+    </div>
 
 
-      <div class="col s12 m3 l3">
-        <div class="top10" style="width: 100%; margin-top: 20px;">
-              <p class="top10__title top10__title--light">
-              <span>Top Rated Casinos</span>
-              </p>
+    <!--  start expander -->
+  <div class="top10__all">
+        
+    
+    <a href="#review" data-target="collapse-content1" data-text-more="" class="read-more"> <h7> read full review </h7> </a>
+   </div>
+    
+      <!--  end expander -->
+      
+      <div data-collapse="collapse-content1"  data-text-close="Close review">
 
-              <ul>
+      {{ content | markdownify }}
 
-                {% assign mid = site.reviews | sort: 'score' %}
-                {% assign sorted = mid | reverse %}
-                {% for review in sorted limit:20 %}
+      
+    </div>
 
-              <li class="top10__item">
-                <span class="top10__link">
-                    <a href="{{ review.permalink }}"
-                    class="top10__link">
-                                                    <img src="/assets/images/logos/{{ review.logo }}" class="top10__img">
-                                                                            <span class="top10__name left">{{ review.casino_name }}</span>
-                                            </a>
-                    <a class="top10__visit" href="{{ review.permalink }}" target="_blank" rel="nofollow">Play</a>
-                </span>
-            </li>
-            {% endfor %}
-          </ul>
-          <a href="/reviews/" class="top10__all">See all casinos </a>        
-        </div>
+
+  {% include conditional_button.html %}
+
+
+</div>
+</div>
+
+  <!--  start -->
+
+<div class="card all_radius" style="width: 100%;">
+
+  <div class="card-title valign-wrapper review-heading">
+  
+   <i class="fas fa-dollar-sign green-text left" style="margin-bottom: 5px;"></i><h7>deposit / withdrawal details</h7>  
+  </div>
+
+<div class="review-body bottom_radius">
+  <div class="list tably" style="text-align: left; color: #7a7f85; margin-top: 5px;">
+  {% include review-table3.html %}
+  {% include conditional_button.html %}
+</div>
+</div>
+</div>
+
+  <!--  end  -->
+
+  <div class="card all_radius" style="width: 100%;">
+
+    <div class="card-title valign-wrapper review-heading">
+      
+     <i class="fas fa-check-circle green-text left" style="margin-bottom: 5px;"></i><h7>{{ page.casino_name }} summary </h7>  
+    </div>
+  
+  <div class="review-body bottom_radius">
+    <div class="list tably" style="text-align: left; color: #7a7f85; margin-top: 5px;">
+    
+
+      <table>
+        <tbody>
+          {% if page.score %} 
+            <tr></tr>
+              <th>Score</th>
+              <td> {{ page.score }} /  1000 </td>
+            </tr>
+            {% endif %}
+
+            {% if page.software_ %} 
+            <tr>
+              <th>Games</th>
+              <td> {{ page.software_ }}</td>
+            </tr>
+            {% endif %}
+
+            {% if page.deposit_methods_ %} 
+            <tr>
+              <th>Deposit Methods</th>
+              <td> {{ page.deposit_methods_ }}</td>
+            </tr>
+            {% endif %}
+
+            {% if page.withdrawal_methods_ %} 
+            <tr>
+              <th>Withdrawal Methods</th>
+              <td> {{ page.withdrawal_methods_ }}</td>
+            </tr>
+            {% endif %}
+
+            {% if page.casino_owner %} 
+            <tr>
+              <th> {{ page.casino_owner }}</th>
+              <td>
+                {% capture tagscommas %} 
+                {% for brand in page.alt.brand %}
+                {% assign filter_path = page.alt.path[forloop.index0] %}
+                <span><a href="{{ filter_path }}">{{ brand }}</a></span>{% unless forloop.last %}, {% endunless %}
+                {% endfor %}
+                {% endcapture %}
+                {{tagscommas}} 
+                </td>
+            </tr>
+            {% endif %}
+
+            {% if page.casino_type %} 
+            <tr>
+              <th>Casino Type</th>
+              <td>  {% capture tagscommas %} 
+                {% for type in page.casino_type %}
+                {{ type }}{% unless forloop.last %}, {% endunless %}
+                {% endfor %}
+                {% endcapture %}
+                {{tagscommas}} 
+              </td>  
+            </tr>
+            {% endif %}
+
+            {% if page.pending_time %} 
+            <tr>
+              <th>Pending Time</th>
+              <td> {{ page.pending_time }}</td>
+            </tr>
+            {% endif %}
+
+            {% if page.response_time %} 
+            <tr>
+              <th>Response Time</th>
+              <td> {{ page.response_time }}</td>
+            </tr>
+            {% endif %}
+
+            {% if page.contact %} 
+            <tr>
+              <th>Contact</th>
+              <td> {% capture tagscommas %}
+                {% for contact in page.contact  %}
+                {{ contact }}{% unless forloop.last %}, {% endunless %}
+                {% endfor %}
+                {% endcapture %}
+                {{tagscommas}} 
+                </td>
+            </tr>
+            {% endif %}
+
+          </tbody>
+        </table>
+      
+    {% include conditional_button.html %}
+  </div>
+  </div>
+  </div>
+
+  <!-- end -->
+  
+
+
+
+
+
+
+
+</div>
+
+
+<!-- start -->
+<div class="col s12 m3 l3 hide-on-small-only" style="margin: 0;">        
+  <div class="top10" style="width: 100%;  margin: 20px 0px -10px 0px;">
+         <p class="top10__title top10__title--light">
+         <span>Top Rated Casinos</span>
+         </p>
+
+         <ul>
+
+           {% assign mid = site.reviews | sort: 'score' %}
+           {% assign sorted = mid | reverse %}
+           {% for review in sorted limit:20 %}
+
+         <li class="top10__item">
+           <span class="top10__link">
+               <a href="{{ review.permalink }}" class="top10__link">
+                <img src="/assets/images/logos/{{ review.logo }}" class="top10__img">
+                                                                       <span class="top10__name left">{{ review.casino_name }}</span>
+                                       </a>
+               <a class="top10__visit" href="{{ review.permalink }}" target="_blank" rel="nofollow">Play</a>
+           </span>
+       </li>
+       {% endfor %}
+     </ul>
+     <a href="/reviews/" class="top10__all">See all casinos </a>    
+   </div> 
+   {% include countries_menu.html %}
+
       </div> 
     </div>
   </span>
 </div>
 
-
-
-
-
-
-
-
-<div class="cardwin" style="width: 100%; margin: 0px 0px 0px 0px;">
-   <div class="card-panel hide-on-med-and-down all_radius">
-     
-    <div class="center row hide-on-med-and-down all_radius">
-        <div class="col s3 m3 hide-on-med-and-down" style="text-align: left;">
-        <div style="position: relative; font-size: 1.5em;"> 
-          <div class="firstPlaces animated rubberBand delay-4s chip pink white-text z-depth-0"  style="text-align: left; position:relative; padding: 10px; left: -17px ; top: -17px">
-             <em><span style="position:relative; top: -3px; left: -2px">1<span class="supertext">st</span></span></em>
-          </div>
-        </div>
-        
-        <div>
-        {% if page.invert == "true"  %}
-         <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="{{ page.color }} circle responsive-img casino-logo" style="margin-bottom 0px; min-width: 100px; max-width: 140px;"></img>
-         {% endif %}
-        
-        {% if page.invert != "true" %}
-         <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="circle responsive-img casino-logo" style="margin-bottom: 0px;  min-width: 100px; max-width: 140px;"></img>
-         {% endif %} 
-        </div>
-     </div>
-     
-     <div class="col s4 m4 l4 hide-on-med-and-down" >
-       <div style="bottom: -10px; display: block;">
-     
-   <div class="rating-holder">
-              <div class="c-rating c-rating--big" data-rating-value="{{page.stars}}">
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
-              </div>
-      </div>
-     
-         <h5 class="{{page.textcolor}}" style="padding: 6px; text-transform: uppercase; font-size: .8em;">{{ page.casino_name }}</h5>
-         <div class="promo-level-1">{{ page.primary_bonus }}</div>
-         <div class="promo-level-2">{{ page.secondary_bonus }}</div>
-       </div>
-    
-     </div>
-      
-      <div class="col s5 m5 hide-on-med-and-down right middle" style="padding: 0px; font-size: .9em;">
-            <ul class="collection" >
-             {% for l_item in page.large_sell %}
-             <li class="collection-item"><div>{{ l_item }}<a href="{{page.url}}" class="secondary-content"></a></div></li>
-             {% endfor %}
-            </ul>
-            <a href="#" class="animated rubberBand delay-5s waves-effect waves-light btn white-text right all_radius" style="margin: 10px; position:relative; top: 22px; left: -20px;">
-            <i class="material-icons right">send</i>Play Now</a>
-        </div> 
-      </div>
-
-<div style=" text-align: left;
-  line-height: 18px;
-  display: block;
-  color: #373b40;
-  margin-top: 5px;
-  padding-top: 5px;
-  border-top: 1px solid #eee;">
-       
-  
-<table>
-  <tbody>
-    
-    {% if page.casino_owner %} 
-    <tr>
-      <td>Owner:</td>
-      <td> {{ page.casino_owner }} </td>
-    </tr>
-    {% endif %}
-
-    {% if page.website %} 
-    <tr>
-      <td>Website:</td>
-      <td> <a href="{{ page.aff_link}}">{{ page.website }}</a></td>
-    </tr>
-    {% endif %}
-    
-    {% if page.terms %} 
-    <tr>
-      <td>Terms:</td>
-      <td> <a href="{{ page.aff_link_terms}}"> {{ page.terms }}</a></td>
-    </tr>
-    {% endif %}
-
-    {% if page.languages %} 
-    <tr>
-      <td>Founded:</td>
-      <td> {% capture tagscommas %}
-        {% for tag in page.year %}
-            {{tag}}
-            {% unless forloop.last %},{% endunless %}
-        {% endfor %}
-        {% endcapture %}
-        {{tagscommas}} </td>
-    </tr>
-    {% endif %}
-
-    {% if page.languages %} 
-    <tr>
-      <td>Licences:</td>
-      <td> {% capture tagscommas %}
-        {% for tag in page.licences %}
-            {{tag}}
-            {% unless forloop.last %},{% endunless %}
-        {% endfor %}
-        {% endcapture %}
-        {{tagscommas}} </td>
-    </tr>
-    {% endif %}
-
-    {% if page.languages %} 
-    <tr>
-      <td>Languages:</td>
-      <td> {% capture tagscommas %}
-        {% for tag in page.languages %}
-            {{tag}}{% unless forloop.last %}, {% endunless %}
-        {% endfor %}
-        {% endcapture %}
-        {{tagscommas}} </td>
-    </tr>
-    {% endif %}
-
-    {% if page.deposit_methods %} 
-    <tr>
-      <td>Deposit Methods:</td>
-      <td> {% capture tagscommas %}
-        {% for tag in page.deposit_methods %}
-            {{tag}}{% unless forloop.last %}, {% endunless %}
-        {% endfor %}
-        {% endcapture %}
-        {{tagscommas}} </td>
-    </tr>
-    {% endif %}
-
-    {% if page.withdrawal_methods %} 
-    <tr>
-      <td>Withdrawal Methods:</td>
-      <td> {% capture tagscommas %}
-        {% for tag in page.withdrawal_methods %}
-           {{tag}}{% unless forloop.last %}, {% endunless %}
-        {% endfor %}
-        {% endcapture %}
-        {{tagscommas}} </td>
-    </tr>
-    {% endif %}
-
-    {% if page.games_by %} 
-    <tr>
-      <td>Software:</td>
-      <td> {% capture tagscommas %}
-        {% for tag in page.games_by %}
-           {{tag}}{% unless forloop.last %}, {% endunless %}
-        {% endfor %}
-        {% endcapture %}
-        {{tagscommas}} </td>
-      </tr>
-    {% endif %}
-  </tbody>
-</table>
-
-    <a href="#" data-target="collapse-content1" data-text-more="" class="read-more">Read More</a>
-    <div data-collapse="collapse-content1"  data-text-close="Close">
-    <p>
-      Vestibulum eleifend volutpat leo, id congue neque dictum at. Integer id erat posuere, tincidunt sapien et, tincidunt sem. Cras orci magna, pulvinar eu tortor eu, eleifend tincidunt orci. Sed iaculis purus ac sem lacinia, in fermentum nisi interdum. Maecenas ut convallis felis, eget finibus sem. Aenean porttitor urna turpis, eu lobortis massa aliquam at. Curabitur aliquam lectus est, in ultrices mauris posuere a. </p>
-      {% for tag in page.tags %} 
-      <div class="collection-item chip grey lighten-2"  style="border-radius: 4px !important;"> 
-        {{ tag }}
-      </div>
-      {% endfor %}
-    </div>
-   </div>
-  </div>
- </div>
 </div>
 
+<!-- end -->
 
+</div>
+</span>
+</div>
 
-<!---
-<ul class="collapsible">
-  
-  <li>
-    <div class="collapsible-header">
-      <i class="material-icons">filter_drama</i>
-      First
-      <span class="new badge">4</span></div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
-  
-  <li>
-    <div class="collapsible-header">
-      <i class="material-icons">filter_drama</i>
-      First
-      <span class="new badge">4</span></div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
-  <li>
-    <div class="collapsible-header">
-      <i class="material-icons">place</i>
-      Second
-      <span class="badge">1</span></div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
-</ul>
-
-
---->

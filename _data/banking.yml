@@ -1,0 +1,23 @@
+- name: American Express
+  permalink: /banking/american-express/
+
+- name: Maestro
+  permalink: /banking/maestro/
+
+- name: Neteller
+  permalink: /banking/neteller/
+
+- name: PayPal
+  permalink: /banking/paypal/
+
+- name: Paysafecard
+  permalink: /banking/paysafecard/
+
+- name: Skrill
+  permalink: /banking/skrill/
+
+- name: Visa Electron
+  permalink: /banking/visa-electron/
+
+- name: Visa
+  permalink: /banking/visa/

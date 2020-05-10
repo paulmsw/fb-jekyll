@@ -1,0 +1,324 @@
+<div class="container">
+    <span>
+      <div class="row" style="margin-top: 0px;">
+        <div class="col s12 m9 l9" style="margin: 0px; text-align: left;">
+        
+  
+          
+          <!--
+          seperator
+          -->
+          
+          
+      {% for brand in page.alt.brand %}
+      {% assign filter_path = page.alt.path[forloop.index0] %}
+  
+      <span class="text_item"><a href="{{ filter_path }}">{{ brand }}</a></span>
+  
+      {% endfor %}
+  
+      
+  
+  
+    {% include country_choice.html %}
+  
+     
+     
+  
+    <div class="row">
+      <div class="card all_radius" style="width: 100%;">
+  
+        <div class="card-title valign-wrapper review-heading">
+            <img src="/assets/images/flags/{{ page.flag }}" style="margin-right: 8px;" alt="{{ page.country }}"> </img><h7>{{ page.country }} casino information</h7>  
+        </div>
+  
+  
+  
+        <div class="review-body bottom_radius">
+
+  
+  
+      <h2>Bringing The Best Casino & Bingo in {{ page.country }} </h2>
+    
+    <p>Why take chances? with over three decades experience in the competitive online casino industy. Flashbitch is 100% dedicated to bringing you the best casino and bingo experience. Our reviews, ratings, bonuses and promotions ensure your playing pleasure. We constantly add new places to play online every month and we stay ahead of the latest innovations and online gaming trends. We list approximately 1000 brands and provide detailed reviews as well as "at-a-glance" overviews for those who just want to get into the action, zero delays, no messing about!</p>
+    
+     
+      <!--  start expander -->
+    <div class="top10__all">
+     <a href="#review" data-target="collapse-content1" data-text-more="" class="read-more"> <h7> More </h7> </a>
+     </div>
+  
+      <!--  end expander -->
+    
+  
+     <a name="review" ></a>
+      <div data-collapse="collapse-content1"  data-text-close="Close review">
+        
+        <p>With a competitive market like the online casino industry, you cay never get bored for the choice of online casinos is incredibly vast. There are new online casinos emerging every day, so there is always a new place where you can try your luck.</p>
+  
+        {{ content | markdownify }}
+      </div>
+    </div>
+  </div>
+</div>
+        <!--  sep -->
+  
+  
+        <h2 style="color: #333; text-transform: uppercase;"> Top 10 {{ page.country }} Casinos Online </h2>
+        
+        
+        
+        
+        {% assign my_array = "" | split: ',' %}
+
+        
+   
+        <div class="row">
+
+
+            {% assign counter = 0 %}
+            
+    
+        {% assign mid = site.reviews | sort: 'score' %}
+        {% assign sorted = mid | reverse %}
+        {% for review in sorted %}
+
+
+        {% if review.restricted contains page.country %} {% elsif counter < 10 %} 
+     
+
+        {% assign counter = counter | plus:1 %}
+    
+        {% assign my_array = my_array | push: review %}
+ 
+    {% endif %}
+    {% endfor %}
+    
+    
+    {% for filtered_review in my_array %}
+
+
+<!-- sep -->
+
+
+
+<div class="cardwin">   
+ <div class="card-panel hide-on-small-only all_radius" style="position: relative;">
+    <div style="position: absolute; bottom: 10px; right: 10px;"> 
+    <a href="{{ filtered_review.aff_link }}" class="waves-effect waves-light white-text btn right">
+        <i class="material-icons right">send</i>Play Now</a>
+    </div>
+        
+
+  <div class="row hide-on-small-only all_radius">
+
+    <div style="position: relative; font-size: 1.5em;"> 
+        
+        <div class="chip animated rubberBand delay-4s yellow  z-depth-2 black-text lighten-1" style="position: absolute; top: -28px; left: -23px; font-size: larger; z-index: 6;">
+          {% assign po = forloop.index %}
+          
+          {% case po %}
+            {% when 1 %}{{po}}st
+            {% when 2 %}{{po}}nd
+            {% when 3 %}{{po}}rd
+            {% else %}{{po}}th
+          {% endcase %}
+      </div>
+
+      </div>
+      
+
+      <div class="col s3 m3 hide-on-small-only" style="text-align: left; padding: 0px;">
+   
+      <div>
+      {% if filtered_review.invert == "true"  %}
+      <a href="{{ filtered_review.aff_link }}">
+      <img src="/assets/images/logos/{{ filtered_review.logo }}" alt="{{ page.title }}" class="{{ filtered_review.color }} circle responsive-img casino-logo" style="margin-bottom 0px; min-width: 100px; max-width: 100px;"></img>
+      </a>
+      {% endif %}
+      
+      {% if filtered_review.invert != "true" %}
+      <a href="{{ filtered_review.aff_link }}">
+       <img src="/assets/images/logos/{{ filtered_review.logo }}" alt="{{ page.title }}" class="circle responsive-img casino-logo" style="margin-bottom: 0px;  min-width: 100px; max-width: 100px;"></img>
+      </a>
+       {% endif %} 
+      </div>
+   </div>
+   
+   <div class="col s4 m4 l4 hide-on-small-only" >
+     <div class="container" style="bottom: -10px; display: block;">
+   
+    <div class="rating-holder">
+            <div class="c-rating c-rating--big" data-rating-value="{{ filtered_review.stars }}">
+              <button>1</button>
+              <button>2</button>
+              <button>3</button>
+              <button>4</button>
+              <button>5</button>
+            </div>
+    </div>
+   
+
+<a href="{{ filtered_review.permalink }}">
+ <h5 class="{{ filtered_review.textcolor }}" style="padding: 6px; text-transform: uppercase; font-size: .8em;">{{ filtered_review.casino_name }}</h5>
+</a>
+
+       <div class="promo-level-1">{{ filtered_review.primary_bonus }}</div>
+       <div class="promo-level-2">{{ filtered_review.secondary_bonus | truncate: 55, '...' }}</div>
+
+     </div>
+    <div class="center hide-on-med-and-down">
+    {% if filtered_review.show_review == "true" %}  
+
+    <a href="{{ filtered_review.url }}" class="center grey-text lighten-2" style="position:relative; left: 0px; top: 25px; font-size: 12px;">read review</a>
+ 
+     {% endif %}
+    
+    </div>
+   </div>
+    
+    <div class="col s5 m5 hide-on-small-only right middle" style="padding: 0px; font-size: .9em;">
+          <ul class="collection" >
+           {% for l_item in filtered_review.large_sell %}
+           {% if forloop.index < 4 %}
+           
+           <li class="collection-item promo"><div>{{ l_item }}<a href="{{ review.url }}" class="secondary-content"></a></div></li>
+           {% endif %}
+           {% endfor %}
+          </ul>
+          
+      </div> 
+    </div>
+  </div>
+</div>
+
+
+<!--  small version  -->
+<div style="max-width: 100%;">
+<div class="show-on-small"  style="display:none;">
+  <div class="col s12 m8 offset-m3 l8 offset-l3" style="padding: 0px;">
+    
+    <div class="card-panel all_radius">
+
+        <div style="position: relative; font-size: 1.5em;"> 
+            <div class="chip animated rubberBand delay-4s yellow  z-depth-2 black-text lighten-1" style="position: absolute; top: -35px; left: -32px; font-size: larger; z-index: 6;">
+              {% assign po = forloop.index %}
+              
+              {% case po %}
+                {% when 1 %}{{po}}st
+                {% when 2 %}{{po}}nd
+                {% when 3 %}{{po}}rd
+                {% else %}{{po}}th
+              {% endcase %}
+          </div>
+        </div>
+
+      <div class="row valign-wrapper center">
+        <div class="col s3 m3 center middle">
+        
+            
+
+      {% if filtered_review.invert == "true"  %}
+       <img src="/assets/images/logos/{{ filtered_review.logo }}" alt="{{ filtered_review.casino_name }}" class="{{ filtered_review.color }} circle responsive-img casino-logo" style="margin-bottom: 0px;"></img>
+       {% endif %}
+        {% if filtered_review.invert != "true" %}
+        <img src="/assets/images/logos/{{ filtered_review.logo }}" alt="{{ filtered_review.title }}" class="circle responsive-img casino-logo" style="margin-bottom: 0px;">
+        {% endif %} 
+         
+         <p>
+            <a class="grey-text lighten-2" href="{{ filtered_review.url }}" style="position:relative; left: 0px; top: 25px; font-size: 10px;">review</a>
+         
+         </p>
+       </div>
+     
+     <div class="col s7">
+
+<div class="rating-holder">
+<div class="c-rating c-rating--medium" data-rating-value="{{filtered_review.stars}}">
+  <button>1</button>
+  <button>2</button>
+  <button>3</button>
+  <button>4</button>
+  <button>5</button>
+</div>
+</div>
+
+<a href="{{ filtered_review.permalink }}">
+<h5 class="{{review.textcolor}}" style="padding: 6px; text-transform: uppercase; font-size: .8em;">{{ filtered_review.casino_name }}</h5>
+</a>
+      <!-- bonuses in medium-down -->
+       <div class="promo-level-3">{{filtered_review.primary_bonus}}</div> <div class="promo-level-4">{{filtered_review.secondary_bonus | truncate: 59, '...' }}</div>
+
+        </div>
+        <div class="col s2">
+         <a href="{{ filtered_review.aff_link }}" class="btn-floating  pulse"><i class="material-icons">arrow_right</i></a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    {% endfor %}
+    
+
+    </div>
+
+    </div>
+  
+  <!-- start -->
+  <div class="col s12 m3 l3 hide-on-small-only" style="margin: 0px;">        
+    <div class="top10" style="width: 100%;  margin: 20px 0px -10px 0px;">
+           <p class="top10__title top10__title--light">
+           <span>Top Rated Casinos</span>
+           </p>
+  
+           <ul>
+  
+             {% assign mid = site.reviews | sort: 'score' %}
+             {% assign sorted = mid | reverse %}
+             {% for review in sorted limit:20 %}
+         
+  
+           <li class="top10__item">
+             <span class="top10__link">
+                 <a href="{{ review.permalink }}" class="top10__link">
+                  <img src="/assets/images/logos/{{ review.logo }}" class="top10__img">
+                                                                         <span class="top10__name left">{{ review.casino_name }}</span>
+                                         </a>
+                 <a class="top10__visit" href="{{ review.permalink }}" target="_blank" rel="nofollow">Play</a>
+             </span>
+         </li>
+
+         {% endfor %}
+       </ul>
+       <a href="/reviews/" class="top10__all">See all casinos </a>    
+     </div> 
+     {% include countries_menu.html %}
+   </div> 
+   
+
+
+  </div>
+
+
+  </span>
+  </div>
+  </div>
+  
+  <!-- end -->
+  
+  <div class="col s12 m12 hide-on-med-and-up">
+  <div class="container">      
+      
+  
+<!-- menu -->
+  
+   </div>
+  
+  </div> 
+  </div>
+  </span>
+  </div>
+  
+  

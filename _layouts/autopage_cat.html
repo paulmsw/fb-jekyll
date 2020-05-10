@@ -1,6 +1,13 @@
 ---
-layout: default
+layout: cats
+autopages:
+  permalink: /cat/:cat/
+pagination:
+  enabled: true
+  collection: reviews
+  debug: true
 ---
+
 <!-- Just some nice to have styles for the pager buttons -->
 
 <div class="home">
@@ -11,34 +18,211 @@ layout: default
 
   {{ content | markdownify }}
 
-  <ul class="post-list">
-   
-    {% for post in paginator.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}{% if post.score %} | Rank: {{ post.score }}{% endif %}{% if post.collection %} | {{ post.collection }}{% endif %}{% if post.tags %}<br>Tags: {{ post.tags }}{% endif %}</span>
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-   
-  <!-- 
-    Showing buttons to move to the next and to the previous list of posts (pager buttons).
-  -->
-  {% if paginator.total_pages > 1 %}
-  <ul class="pagination">
-      {% if paginator.previous_page %}
-      <li class="waves-effect">
-          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="material-icons">chevron_left</i></a>
-      </li>
-      {% endif %}
-      {% if paginator.next_page %}
-       <li class="waves-effect">
-          <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="material-icons">chevron_right</i></a>
-      </li>
-      {% endif %}
-  </ul>
-  {% endif %}
+
+
+
+  {% for page in paginator.posts %}
+  
+
+<!--
+  Cards horizontal large medium and small
+
+
+  replace all spaced in tags with +
+-->
+
+
+<div class="cardwin">
+    
+     <div class="card-panel hide-on-med-and-down all_radius">
+     
+      <div class="center row hide-on-med-and-down all_radius">
+          <div class="col s3 m3 hide-on-med-and-down" style="text-align: left;">
+          <div style="position: relative; font-size: 1.5em;"> 
+            <div class="firstPlaces animated rubberBand delay-4s chip pink white-text z-depth-0"  style="text-align: left; position:relative; padding: 10px; left: -17px ; top: -17px">
+               <em><span style="position:relative; top: -3px; left: -2px">1<span class="supertext">st</span></span></em>
+            </div>
+          </div>
+          
+          <div>
+          {% if page.invert == "true"  %}
+           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="{{ page.color }} circle responsive-img casino-logo" style="margin-bottom 0px; min-width: 100px; max-width: 140px;">
+           {% endif %}
+          
+          {% if page.invert != "true" %}
+           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="circle responsive-img casino-logo" style="margin-bottom: 0px;  min-width: 100px; max-width: 140px;">
+           {% endif %} 
+          </div>
+       </div>
+       
+       <div class="col s4 m4 l4 hide-on-med-and-down" >
+         <div style="bottom: -10px; display: block;">
+       
+     <div class="rating-holder">
+                <div class="c-rating c-rating--big" data-rating-value="{{page.stars}}">
+                  <button>1</button>
+                  <button>2</button>
+                  <button>3</button>
+                  <button>4</button>
+                  <button>5</button>
+                </div>
+        </div>
+       
+           <h5 class="{{page.textcolor}}" style="padding: 6px; text-transform: uppercase; font-size: .8em;">{{ page.casino_name }}</h5>
+           <div class="promo-level-1">{{ page.primary_bonus }}</div>
+           <div class="promo-level-2">{{ page.secondary_bonus }}</div>
+         </div>
+      
+       </div>
+        
+        <div class="col s5 m5 hide-on-med-and-down right middle" style="padding: 0px; font-size: .9em;">
+              <ul class="collection" >
+               {% for l_item in page.large_sell %}
+               <li class="collection-item"><div>{{ l_item }}<a href="{{page.url}}" class="secondary-content"></a></div></li>
+               {% endfor %}
+              </ul>
+              <a href="#" class="animated rubberBand delay-5s waves-effect waves-light btn pink right all_radius" style="margin: 10px; position:relative; top: 22px; left: -20px;">
+              <i class="material-icons right">send</i>Play Now</a>
+          </div> 
+        </div>
+ <hr>
+ {% for tag in page.tags %} 
+  <div class="collection-item chip grey lighten-2"  style="border-radius: 4px !important;"> 
+ {{ tag }}
+  </div>
+ {% endfor %}
+
+      </div>
+    </div>
+ 
+ 
+
+    <!-- medium starts-->
+<div class="center" style="max-width: 100%;">
+ <div class="card-panel all_radius show-on-medium"  style="display:none;">
+    
+    
+      <div class="row">
+          <div class="col s3 m3" style="text-align: left;">
+          <div>
+            <div class="firstPlaces animated rubberBand delay-4s chip pink white-text z-depth-1"  style="text-align: left; position:relative; left: -27px ; top: -17px">
+               <em><span style="position:relative; top: -4px; left: -2px">1<span class="supertext">st</span></span></em>
+            </div>
+          </div>
+          
+          <div>
+        {% if page.invert == "true"  %}
+           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="{{ page.color }} circle responsive-img casino-logo" style="margin-bottom 0px; min-width: 100px; max-width: 140px;"></img>
+           {% endif %}
+          
+          {% if page.invert != "true" %}
+           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="circle responsive-img casino-logo" style="margin-bottom: 0px;  min-width: 100px; max-width: 140px;"></img>
+           {% endif %} 
+          </div>
+         </div>
+       <div class="col s5 m5 center">
+         <div class="container">
+    
+     <div class="rating-holder">
+    <div class="c-rating c-rating--big" data-rating-value="{{page.stars}}">
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+      <button>5</button>
+    </div>
+  </div>
+      
+      <h5 class="{{page.textcolor}}" style="padding: 6px; text-transform: uppercase; font-size: .8em;">{{ page.casino_name }}</h5>
+           <div class="promo-level-1">{{ page.primary_bonus }}</div>
+           <div class="promo-level-2">{{ page.secondary_bonus }}</div>
+    
+
+
+  </div>
+      </div>
+        <div class="col s4 m4 center">
+             <ul class="collection">
+               {% for m_item in page.medium_sell %}
+               <li class="collection-item"><div>{{ m_item }}</div></li>
+               {% endfor %}
+              </ul>
+              <a class="z-depth-0 animated rubberBand delay-5s waves-effect waves-light btn pink right all_radius" style="margin: 10px; position:relative; left: -12px; top: 20px;">
+              <i class="material-icons right">send</i>Play Now</a>
+          </div> 
+        </div>
+ <hr>
+ {% for tag in page.tags %} 
+  <div class="collection-item chip grey lighten-2"  style="border-radius: 4px !important;"> 
+ {{ tag }}
+  </div>
+  {% endfor %}
+  </div>
+</div>
+       
+ <!--  small version  -->
+<div class="center" style="max-width: 100%;">
+    <div class="show-on-small"  style="display:none;">
+      <div class="col s12 m8 offset-m3 l8 offset-l3">
+        
+        
+        <div class="card-panel all_radius">
+          <div class="row valign-wrapper center">
+            <div class="col s3 m3 center middle">
+            
+          {% if page.invert == "true"  %}
+           <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.casino_name }}" class="{{ page.color }} circle responsive-img casino-logo" style="margin-bottom: 0px;"></img>
+           {% endif %}
+            {% if page.invert != "true" %}
+            <img src="/assets/images/logos/{{ page.logo }}" alt="{{ page.title }}" class="circle responsive-img casino-logo" style="margin-bottom: 0px;">
+            {% endif %} 
+             
+           
+           </div>
+         
+         <div class="col s7">
+
+ <div class="rating-holder">
+    <div class="c-rating c-rating--medium" data-rating-value="{{page.stars}}">
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+      <button>5</button>
+    </div>
+  </div>
+
+ <h5 class="{{page.textcolor}}" style="padding: 6px; text-transform: uppercase; font-size: .8em;">{{ page.casino_name }}</h5>
+          <!-- bonuses in medium-down -->
+           <div class="promo-level-3">{{page.primary_bonus}}</div> 
+           <div class="promo-level-4">{{page.secondary_bonus}}</div>
+            </div>
+            <div class="col s2">
+             <a class="btn-floating  pulse"><i class="material-icons">arrow_right</i></a>
+            </div>
+
+             <div class="container center">
+              <a href="#" class="center-align grey-text lighten-2" style="position:relative; left: 0px; top: 25px; font-size: 12px;"><i class="fas fa-arrow-down"></i> read review</a> 
+              
+             </div>
+    </div>
+
+
+
+
+
+
+
+            </div>
+   </div>
+  </div>
+ </div>
+
+      {% endfor %}
+
+
+
+
+
 
 </div>

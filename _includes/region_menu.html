@@ -1,0 +1,10 @@
+
+      {% assign mid = site.data.region %}
+      {% for software in mid limit:5 %}
+
+        <p>  
+        <a class="white-text" href="{{ software.permalink }}">
+        {{ software.name }}</a>
+        </p>
+        
+     {% endfor %}

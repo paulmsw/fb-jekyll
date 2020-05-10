@@ -1,0 +1,101 @@
+
+  <div class="warn_card red white-text">
+    <div class="container" style="padding: 1.0em;">{{ page.casino_name | upcase }} is CLOSED and longer operating.</div>
+    </div>
+
+  <div class="alternatives">
+    
+    <div class="card yellow" style="margin: 0px 0px 0px 0px; z-index: 5">
+  <section class="section center container">
+  <span>
+    <div>
+      <h4 style="padding-top: 1.3rem;">Recommended 3 Best Casinos</h4>
+    </div>
+
+    <div class="row">
+
+    {% assign mid = site.reviews | sort: 'score' %}
+    {% assign sorted = mid | reverse %}
+    {% for review in sorted limit:3 %}
+
+
+<!-- show on desktop --> 
+
+
+<div class="col s12 m4 hide-on-med-and-down">
+    
+  
+    <div style="margin: .5rem;">
+      <div class="card all_radius" style="padding: .9rem;">
+        <div class="chip animated rubberBand delay-4s yellow z-depth-2 black-text lighten-1" style="position: absolute; top: -10px; left: -10px; font-size: larger; z-index: 6;">
+            {% assign po = forloop.index %}
+            
+            {% case po %}
+              {% when 1 %}{{po}}st
+              {% when 2 %}{{po}}nd
+              {% when 3 %}{{po}}rd
+              {% else %}{{po}}th
+            {% endcase %}
+          </div>
+  
+  
+  
+      <a href="{{ review.permalink }}" target="_blank" rel="nofollow"><img class="circle responsive-img casino-logo" src="/assets/images/logos/{{review.logo}}" alt="{{ casino_name }}"></a>
+      <h3>{{ review.casino_name }}</h3>
+      <p> {{ review.primary_bonus }} {{ review.secondary_bonus | truncate: 28, '...' }}</p>
+    
+        <a href="{{ review.aff_link }}" class="waves-effect waves-light btn white-text" style="width: 80%;">Claim Bonus</a>
+    </div>
+    
+    </div>
+  </div>
+
+
+
+
+
+<!-- show on tablet and mobile -->    
+<div class="card all_radius hide-on-large-only" style="padding: .4rem;">
+        
+<div class="row">
+
+    <div class="col s3 m2 l2">
+        <div class="chip animated rubberBand delay-4s yellow z-depth-2 black-text lighten-1" style="position: absolute; top: -10px; left: -10px; font-size: larger; z-index: 6;">
+            {% assign po = forloop.index %}
+            
+            {% case po %}
+              {% when 1 %}{{po}}st
+              {% when 2 %}{{po}}nd
+              {% when 3 %}{{po}}rd
+              {% else %}{{po}}th
+            {% endcase %}
+        </div>
+<div class="valign-wrapper center" style="padding: 0.2em;" >
+    <a href="{{ review.permalink }}" target="_blank" rel="nofollow"><img class="circle responsive-img casino-logo" src="/assets/images/logos/{{review.logo}}" alt="{{ casino_name }}"></a>
+
+</div>
+    
+    </div>
+    
+    <div class="col s9 m10 l10">
+        <h3>{{ review.casino_name }}</h3>
+
+        <p> {{ review.primary_bonus }} {{ review.secondary_bonus | truncate: 32, '...' }}</p>
+
+      <a href="{{ review.aff_link }}" class="waves-effect waves-light btn-small white-text" style="width: 80%;">Claim Bonus</a>
+    </div>
+    
+
+</div>
+
+</div>
+{% endfor %}
+
+</div>
+
+  </span>
+
+  </section>
+</div>
+</div>
+ 

@@ -1,0 +1,10 @@
+
+      {% assign mid = site.data.crypto %}
+      {% for crypto in mid limit:5 %}
+
+        <p>  
+        <a class="white-text" href="{{ crypto.permalink }}">
+        {{ crypto.name }}</a>
+        </p>
+        
+     {% endfor %}

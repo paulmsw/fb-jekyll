@@ -1,0 +1,181 @@
+<div class="container">
+  <span>
+    <div class="row" style="margin-top: 0px;">
+      <div class="col s12 m9 l9" style="margin: 0px; text-align: left;">
+      
+
+        <div class="content-hero " style="margin-top: 20px;">
+
+    
+            <div class="top_radius" style="width: 100%; background: black; ">
+
+          <div class="ch-main__info top_radius dark" style=" background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url(/assets/images/heros/hp-hero.jpg);">
+            
+            <span><h1 class="ch-title" style="font-size: 36px; text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px;">Helping you win more</h1></span>
+            <p class="light" style="margin: 10px 0 10px 0;">More bonuses and free-spins & promotion each month, exclusive deals and detailed reviews from a dedicated team of online casino experts with decades of industry experience.</p>
+           </div>
+          
+          </div>
+       
+            <p class="top10__all" style="padding-right: 20px; padding-left: 20px;"> 
+              <a href="{{ page.aff_link_terms }}"><span class="flag"><img src="/assets/images/flags/USA-flag.png" alt="United States of America"></span>USA</a>
+              <a href="{{ page.aff_link_terms }}"><span class="flag"><img src="/assets/images/flags/Great-Britain-flag.png" alt="United States of America"></span>UK</a>
+              <a href="{{ page.aff_link_terms }}"><span class="flag"><img src="/assets/images/flags/Canada-flag.png" alt="United States of America"></span>CA</a>
+              <a href="{{ page.aff_link_terms }}"><span class="flag"><img src="/assets/images/flags/Australia-flag.png" alt="United States of America"></span>AU</a>
+              <a href="{{ page.aff_link_terms }}"><span class="flag"><img src="/assets/images/flags/South-Africa-flag.png" alt="United States of America"></span>ZA</a>
+              <a href="{{ page.aff_link_terms }}"><span class="flag"><img src="/assets/images/flags/New-Zealand-flag.png" alt="United States of America"></span>NZ</a> 
+            </p>
+        </div>
+
+        
+        <!--
+        seperator
+        -->
+        
+        
+    {% for brand in page.alt.brand %}
+    {% assign filter_path = page.alt.path[forloop.index0] %}
+
+    <span class="text_item"><a href="{{ filter_path }}">{{ brand }}</a></span>
+
+    {% endfor %}
+
+  
+    {% include choice.html %}
+
+    
+    <div class="card all_radius" style="width: 100%;">
+
+      <div class="card-title valign-wrapper review-heading">
+       <i class="fas fa-info-circle green-text left" style="margin-bottom: 5px;"></i><h7>{{ page.casino_name }} information</h7>  
+      </div>
+
+
+
+      <div class="review-body bottom_radius">
+
+
+    <h2>Bringing The Best Casino & Bingo</h2>
+  
+  <p>Why take chances? with over three decades experience in the competitive online casino industy. Flashbitch is 100% dedicated to bringing you the best casino and bingo experience. Our reviews, ratings, bonuses and promotions ensure your playing pleasure. We constantly add new places to play online every month and we stay ahead of the latest innovations and online gaming trends. We list approximately 1000 brands and provide detailed reviews as well as "at-a-glance" overviews for those who just want to get into the action, zero delays, no messing about!</p>
+  <p>With a competitive market like the online casino industry, you cay never get bored for the choice of online casinos is incredibly vast. There are new online casinos emerging every day, so there is always a new place where you can try your luck.</p>
+
+   
+    <!--  start expander -->
+  <div class="top10__all">
+   <a href="#review" data-target="collapse-content1" data-text-more="" class="read-more"> <h7> read full review </h7> </a>
+   </div>
+
+    <!--  end expander -->
+  
+
+   <a name="review" ></a>
+    <div class="review" data-collapse="collapse-content1"  data-text-close="Close review">
+      
+     
+      {{ content | markdownify }}
+    </div>
+  </div>
+</div>
+      <!--  sep -->
+
+
+      <h2 style="color: #333; text-transform: uppercase;"> Top 3 editors choice </h2>
+      {% include top3cards.html %}
+      
+  </div>
+
+
+<!-- start -->
+<div class="col s12 m3 l3 hide-on-small-only" style="margin: 0px;">        
+  <div class="top10" style="width: 100%;  margin: 20px 0px -10px 0px;">
+         <p class="top10__title top10__title--light">
+         <span>Top Rated Casinos</span>
+         </p>
+
+         <ul>
+
+           {% assign mid = site.reviews | sort: 'score' %}
+           {% assign sorted = mid | reverse %}
+           {% for review in sorted limit:20 %}
+
+         <li class="top10__item">
+           <span class="top10__link">
+               <a href="{{ review.permalink }}" class="top10__link">
+                <img src="/assets/images/logos/{{ review.logo }}" class="top10__img">
+                                                                       <span class="top10__name left">{{ review.casino_name }}</span>
+                                       </a>
+               <a class="top10__visit" href="{{ review.permalink }}" target="_blank" rel="nofollow">Play</a>
+           </span>
+       </li>
+       {% endfor %}
+     </ul>
+     <a href="/reviews/" class="top10__all">See all casinos </a>    
+   </div> 
+
+  
+   {% include countries_menu.html %}
+  
+  </div> 
+</div>
+</span>
+</div>
+</div>
+
+<!-- end -->
+
+<div class="col s12 m12 hide-on-med-and-up">
+<div class="container">      
+    
+
+      {% assign mid = site.reviews | sort: 'score' %}
+      {% assign sorted = mid | reverse %}
+      {% for review in sorted limit:3 %}
+
+ 
+  
+  <!-- show on tablet and mobile    --> 
+  <div class="card all_radius hide-on-large-only" style="padding: .4rem;">
+          
+  <div class="row">
+  
+      <div class="col s3 m2 l2">
+          <div class="chip animated rubberBand delay-4s z-depth-2 yellow black-text lighten-1" style="position: absolute; top: -10px; left: -10px; font-size: larger;">
+              {% assign po = forloop.index %}
+              
+              {% case po %}
+                {% when 1 %}{{po}}st
+                {% when 2 %}{{po}}nd
+                {% when 3 %}{{po}}rd
+                {% else %}{{po}}th
+              {% endcase %}
+          </div>
+  <div class="valign-wrapper center" style="padding: 0.2em;" >
+      <a href="{{ review.permalink }}" target="_blank" rel="nofollow"><img class="circle responsive-img casino-logo" src="/assets/images/logos/{{review.logo}}" alt="{{ casino_name }}"></a>
+  
+  </div>
+      
+      </div>
+      
+      <div class="col s9 m10 l10">
+         <a href="{{ review.permalink }}" target="_blank" rel="nofollow"> <h3>{{ review.casino_name }}</h3> </a>
+  
+          <p> {{ review.primary_bonus }} {{ review.secondary_bonus | truncate: 29, '...' }}</p>
+  
+        <a href="{{ review.aff_link }}" class="waves-effect waves-light btn-small white-text" style="width: 80%;">Claim Bonus</a>
+      </div>
+  
+  
+  </div>
+  
+  </div>
+  {% endfor %}
+
+
+ </div>
+
+</div> 
+</div>
+</span>
+</div>
+

@@ -23,7 +23,7 @@ $(".read-more").on("click", function(){
         text_more = $(this).data("text-more");
               $(this).addClass('collapse-open');	
               $(this).html(text_close);
-              $("[data-collapse="+content_collapse+"]").slideDown(50);
+              $("[data-collapse="+content_collapse+"]").slideDown(250);
               
                               
           } else {
@@ -31,7 +31,7 @@ $(".read-more").on("click", function(){
         text_more = $(this).data("text-more");
               $(this).html(text_more);	
               $(this).removeClass('collapse-open');
-              $("[data-collapse="+content_collapse+"]").slideUp(50);
+              $("[data-collapse="+content_collapse+"]").slideUp(250);
           }
   
   

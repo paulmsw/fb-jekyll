@@ -1,30 +1,85 @@
 <footer>
-     {% include data_panel.html %}
-  
-  <div class="container center transparent">
-    <div class="row ">
-      <div class="col s4 m4 l4 grey-text">
-             <p>  &copy; 2018 Copyright </p>
-       <p> <img style="width: 100%; min-width: 115px;" class="transparent grey-text" src="/assets/images/logo-small-grey-lighten-1.png"> </img></p>
-      </div>
-   <div class="col s6 m6 l6 offset-l6">
-    <div class="grey-text center-align right">
-        <h4 class = "grey-text">Links</h4>
-        {%- include social.html -%}
-    </div>
-      </div>
-    </div>
-  </div>
+
+
+  {% include data_panel.html %}
+
+ <div class="centre-align">
  
-    <div class="center footer-copyright grey-text">
-      <div class="container">
-        <div class="container center">
-          <a href="#!" class="grey-text">affiliates</a> |
-          <a href="#!" class="grey-text">advertising</a> | 
-          <a href="#!" class="grey-text">contact</a>
-         </div>
-       </div>
-      </div>
-    </div>
-   <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <div class="parallax-container z-depth-0 valign-wrapper">
+          <!-- games chips -->
+
+                  <div class="container centre-align" style="width: 75%;  margin: auto;">
+                      
+                        <div class="row">
+                          <div class="col s4 left-align white-text">
+                            <h9>quick links</h9>
+                            <p><a href="#!" class="white-text">Casino</a></p>
+                            <p><a href="#!" class="white-text">Bingo</a></p>
+                            <p><a href="#!" class="white-text">News</a></p>
+                            <p><a href="#!" class="white-text">Blog</a></p>
+                        
+                            <h9>Casino Reviews</h9>
+                            {% include review_menu.html %}
+                          </div>
+                          <div class="col s4 left-align white-text">
+                            <h9>location</h9>
+                            {% include region_menu.html %}
+                            <h9>software</h9>
+                            {% include software_menu.html %}
+                          </div>
+                          <div class="col s4 left-align white-text">
+                            <h9>payment methods</h9>
+                            {% include banking_menu.html %}
+                            <h9>crypto</h9>
+                            {% include crypto_menu.html %}
+                            </div>
+                          </div>
+
+          <div class="parallax z-depth-1">
+              <img src="{{ site.baseurl }}/assets/images/heros/goa_sunset_dim.jpg">
+          </div>
+  
+
+<div class="center">
+  <span>
+
+
+  <span>
+   <img class="footpad footlogo" src="/assets/images/foot/logo--18-plus.png" alt="18 plus">
+  </span>
+  <span>
+    <a href="https://www.begambleaware.org">  <img class="footpad footlogo" src="/assets/images/foot/logo--be-gamble-aware.png" alt="Be Gamble Aware"> </a> 
+  </span>
+  <span>
+    <a href="https://www.ecogra.org/ata/">  <img class="footpad footlogo" src="/assets/images/foot/logo--ecogra--zoom.png" alt="Ecogra Gambling"></a> 
+    </span>
+    <span>
+      <a href="https://www.gamblingcommission.gov.uk/"> <img class="footpad footlogo" src="/assets/images/foot/logo--gambling-commission.png" alt="">
+    </span>
+    <span>
+   <a href="https://www.gamcare.org.uk/"> <img class="footpad footlogo" src="/assets/images/foot/logo--gamcare.png" alt="GamCare UK"></a>
+    </span>
+    <span>
+      <a href="https://www.mga.org.mt/"> <img class="footpad footlogo" src="/assets/images/foot/logo--mga.png" alt="Malta Gaming Authority"> </a>
+    </span>
+  </span>
+</div>
+
+
+<div class="container center white-text" style="padding-bottom: 10px;">
+  <a href="#!" class="white-text">affiliates</a> |
+  <a href="#!" class="white-text">advertising</a> | 
+  <a href="#!" class="white-text">contact</a>
+ </div>
+</div>
+
+
+
+        </div>
+      <!-- main breadcumb under head pic-->
+  </div>
+</div>
+</div>
+
 </footer>
+

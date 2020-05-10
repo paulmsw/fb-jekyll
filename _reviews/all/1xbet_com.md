@@ -429,128 +429,140 @@ cons: FAQ section only in Russian
 
 deposit_methods_: '80'
 
-deposit_methods_n: '100'
-
 withdrawal_methods_: '72'
-
-withdrawal_methods_n: '100'
 
 software_: '1569'
 
-software_n: '54'
-
 categories:
-- Topgame
-- Amatic Industries
-- Booongo Gaming
-- Playtech
-- Ezugi
-- Microgaming
+- LuckyStreak
 - Tom Horn Gaming
-- XPro Gaming
-- Endorphina
-- Novomatic
-- Pragmatic Play
-- GameArt
+- Igrosoft
+- Playtech
+- Aristocrat
 - Betsoft
+- Inbet Games
+- Betgames
+- Topgame
+- Endorphina
+- Red Rake Gaming
+- XPro Gaming
+- Pragmatic Play
+- Microgaming
+- Ezugi
 - Future Gaming Solutions
 - NetEnt
-- Igrosoft
-- ZEUS PLAY
-- Inbet Games
 - Play'n GO
 - Evolution Gaming
-- Aristocrat
-- Red Rake Gaming
+- Booongo Gaming
 - EGT Interactive
-- LuckyStreak
-- Betgames
+- GameArt
+- ZEUS PLAY
+- Novomatic
+- Amatic Industries
 
 tags:
-- Euteller
-- ATM Online
-- Neosurf
-- Abaqoos
-- Privat24
-- PayKwik
-- Teleingreso
-- Todito Cash
-- Postepay
-- DineroMail
-- ePay.bg
-- PayKasa
-- EPS
-- Quick Pay
-- Litecoin
-- Bank Wire Transfer
-- Fast Bank Transfer
-- Dogecoin
-- Nordea
-- QIWI
-- eKonto
-- Entropay
-- Webpay (by Neteller)
-- Multibanco
-- Przelewy24
-- iDEAL
-- MoneySafe
-- Instant Banking
-- Boku
-- Paysafe Card
-- Sepa
-- Sofortuberwaisung
-- china union pay
-- Boleto
-- Svyazno
-- Carte Bleue
-- oxxo
-- Skrill
-- Skrill 1-Tap
-- Ticket Premium
-- Vimo Wallet
-- Mobile payments Beeline
-- Neteller
-- MyCitadel
 - Otopay
-- Megafone
-- Paysec THB
-- BankLink
-- Sberbank Online
-- WeChat Pay
-- MasterCard
-- HSBC
-- PAGOFACIL
-- Payeer
-- Rapida
-- Wallet One
-- ePay
-- Alfa Click
-- Perfect Money
-- Yandex Money
-- Visa
-- EasyPay
-- Maestro
+- Boleto
 - GiroPay
-- Prepaid Cards
+- EPS
+- Instant Banking
+- Ticket Premium
+- Svyazno
+- Euteller
+- oxxo
 - WebMoney
-- CartaSi
-- AstroPay Card
-- Lobanet
-- Redpagos (by Neteller)
-- AstroPay Direct
-- Bitcoin
-- Santander
+- Sepa
+- WeChat Pay
 - TrustPay
-- moneta.ru
-- EcoPayz
-- UTEL
-- Paybox
+- Nordea
+- Postepay
+- AstroPay Direct
 - Trustly
+- Przelewy24
+- MyCitadel
+- Paybox
+- Neteller
+- Wallet One
+- EasyPay
+- Neosurf
+- Skrill
+- Megafone
+- Alfa Click
+- ePay
+- Litecoin
+- Visa
+- Fast Bank Transfer
+- PayKasa
+- Quick Pay
+- QIWI
+- Redpagos (by Neteller)
+- PayKwik
+- Entropay
+- Todito Cash
+- HSBC
+- Dogecoin
+- Perfect Money
+- BankLink
+- Paysec THB
+- EcoPayz
+- Privat24
+- iDEAL
+- moneta.ru
+- eKonto
+- Mobile payments Beeline
+- Santander
+- MoneySafe
+- Skrill 1-Tap
+- Rapida
+- DineroMail
+- Abaqoos
+- Carte Bleue
+- AstroPay Card
+- Vimo Wallet
+- ATM Online
+- Boku
+- ePay.bg
+- Bank Wire Transfer
+- PAGOFACIL
+- Bitcoin
+- Multibanco
+- Webpay (by Neteller)
+- Paysafe Card
+- Yandex Money
+- Sofortuberwaisung
+- Sberbank Online
+- china union pay
 - Tele2
+- MasterCard
+- UTEL
+- Lobanet
+- Teleingreso
+- Prepaid Cards
+- CartaSi
+- Payeer
+- Maestro
 - Live casino available
 - Live chat open 24/7
 - Instant play available
 
-terms: '*18+ T&Cs Apply. BeGambleAware.org'
+terms: Terms & Conditions Apply - BeGambleAware.org
 
 ---
+
+
+## title 2
+When you start typing an Emmet abbreviation, you will see the abbreviation displayed in the suggestion list. If you have the suggestion documentation fly-out open, you will see a preview of the expansion as you type. If you are in a stylesheet file, the expanded abbreviation shows up in the suggestion list sorted among the other CSS suggestions.
+
+### title 3
+Using Tab for Emmet expansions
+If you want to use the Tab key for expanding the Emmet abbreviations, add the following setting:
+
+### title 3 
+"emmet.triggerExpansionOnTab": true
+This setting allows using the Tab key for indentation when text is not an Emmet abbreviation.
+
+## title 2
+Emmet when quickSuggestions are disabled
+If you have disabled the editor.quickSuggestions setting, you won't see suggestions as you type. You can still trigger suggestions manually by pressing ⌃Space and see the preview.
+
+Disable Emmet in suggestions

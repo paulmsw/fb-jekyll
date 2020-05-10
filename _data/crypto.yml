@@ -1,0 +1,20 @@
+- name: Bitcoin
+  permalink: /banking/bitcoin/
+
+- name: Ethereum
+  permalink: /banking/ethereum/
+
+- name: Monero
+  permalink: /banking/monero/
+
+- name: Bitcoin Cash
+  permalink: /banking/bitcoin-cash/
+
+- name: Ripple
+  permalink: /banking/ripple/
+
+- name: Bitcoin SV
+  permalink: /banking/bitcoin-sv/
+
+- name: Litecoin
+  permalink: /banking/litecoin/

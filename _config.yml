@@ -30,10 +30,12 @@ google_analytics: UA-135509266-2
 
 # make npm packagaes available
 sass:
+  sass_dir: _sass
   load_paths:
     - _sass
     - node_modules/materialize-css/sass
   style: compressed
+
 
 author:
   name:           'FlashBitch'
@@ -66,16 +68,18 @@ exclude:
 collections:
   reviews:
     output: true
-    permalink: /casino-reviews/:path/
-
+    permalink: /reviews/:path/
+  countries:
+    output: true
+    permalink: /best-casinos/:path/
 
 autopages:
   enabled: true
   tags: 
     layouts: 
       - autopage_collections_tags.html
-    # - autopage_tags.html
-    enabled: false
+      # - autopage_tags.html
+    enabled: true
     title: ':tag'
   categories:
     layouts:
