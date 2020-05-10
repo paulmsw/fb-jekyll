@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-05-10T17:21:43+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Online Casino, Slots &amp;amp; Bingo Bonuses and Reviews | FlashBitch</title><subtitle>We've rated and reviews online casino, slots &amp;amp; bingo sites. Ranked by only the criteria which matter to  the most discerning player. Whether you are new to online gaming or a seasoned VIP. We have exactly what you're looking for. 
+</subtitle><author><name>FlashBitch</name></author><entry><title type="html">Welcome to Jekyll Paginate V2!</title><link href="http://localhost:4000/blog/2016/10/27/welcome-to-jekyll-paginate-v2/" rel="alternate" type="text/html" title="Welcome to Jekyll Paginate V2!" /><published>2016-10-27T19:16:49+01:00</published><updated>2016-10-27T19:16:49+01:00</updated><id>http://localhost:4000/blog/2016/10/27/welcome-to-jekyll-paginate-v2</id><content type="html" xml:base="http://localhost:4000/blog/2016/10/27/welcome-to-jekyll-paginate-v2/">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. This post along with all of the other example posts is paginated by the new &lt;a href=&quot;https://github.com/sverrirs/jekyll-paginate-v2&quot;&gt;jekyll-paginate-v2 gem&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This pagination gem is built specially for Jekyll 3 and newer and is intended to replace the now discontinuted jekyll-paginate gem.&lt;/p&gt;
+
+&lt;p&gt;This v2 of the gem offers full backwards compatibility with the old gem and its site configuration. You can simply replace the old jekyll-paginate gem with this one and your sites will still work without any changes.&lt;/p&gt;
+
+&lt;p&gt;However to access the new enhanced features of this gem, like pagination on categories, tags and locales, then you need to remove the old jekyll-paginate configuration and activate the new &lt;code class=&quot;highlighter-rouge&quot;&gt;pagination:&lt;/code&gt; &lt;a href=&quot;https://github.com/sverrirs/jekyll-paginate-v2#site-configuration&quot;&gt;site configuration&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://github.com/sverrirs/jekyll-paginate-v2/tree/master/examples&quot;&gt;source code&lt;/a&gt; for this example project will show you all the necessary steps.&lt;/p&gt;
+
+&lt;h2 id=&quot;installing&quot;&gt;Installing&lt;/h2&gt;
+
+&lt;p&gt;Go ahead and install the latest version of the gem from &lt;a href=&quot;https://rubygems.org/gems/jekyll-paginate-v2&quot;&gt;rubygems.org&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install jekyll-paginate-v2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Replace the &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-paginate&lt;/code&gt; gem with &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-paginate-v2&lt;/code&gt; in both your &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; and your &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now go ahead and re-build your site to start running the new pagination logic. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;Please see the &lt;a href=&quot;https://github.com/sverrirs/jekyll-paginate-v2&quot;&gt;GitHub repo&lt;/a&gt; to learn how to get the most out of this new pagination gem. There we also discuss the gems more advanced features.&lt;/p&gt;
+
+&lt;p&gt;Please file all bugs/feature requests in the issues section of the &lt;a href=&quot;https://github.com/sverrirs/jekyll-paginate-v2/issues&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Have a great day :)&lt;/p&gt;</content><author><name>FlashBitch</name></author><summary type="html">You’ll find this post in your _posts directory. This post along with all of the other example posts is paginated by the new jekyll-paginate-v2 gem.</summary></entry></feed>
